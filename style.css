@@ -1,0 +1,59 @@
+/* Main heading */
+h1 {
+  color: #1F4E79;               /* Deep Blue - Primary Color */
+  font-size: 42px;
+  font-family: 'Montserrat', sans-serif;  /* Heading font */
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Navigation */
+nav p {
+  color: #F2B705;               /* Warm Gold - Secondary Color */
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;   /* Body font */
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Section headings */
+h3 {
+  color: #F2B705;               /* Warm Gold */
+  font-size: 28px;
+  font-family: 'Montserrat', sans-serif;  /* Heading font */
+  margin-top: 20px;
+}
+
+/* Paragraph text */
+p {
+  color: #1F4E79;               /* Deep Blue */
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;   /* Body font */
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Accent color for emphasis */
+strong, em {
+  color: #D1495B;               /* Coral Red - Accent Color */
+  font-family: 'Open Sans', sans-serif;  /* Keep body font */
+}
+
+/* Accent color for links */
+a {
+  color: #D1495B;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: #1F4E79;
+  font-family: 'Open Sans', sans-serif;  /* Footer font */
+  margin-top: 40px;
+}
