@@ -65,3 +65,71 @@ footer {
   font-weight: 400;
   margin-top: 40px;
 }
+/* ============================
+   HERO SECTION STYLING
+============================ */
+
+.hero {
+  background: url('images/hero.jpg'); 
+  background-size: cover;
+  background-position: center;
+  padding: 120px 20px;
+  color: white;
+  text-align: center;
+  position: relative; /*logo placement*/
+}
+
+.hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4rem;
+  color: #F2B705; /* Gold highlight */
+}
+
+.hero .highlight {
+  color: #D1495B; /* Coral red accent inside headings */
+}
+
+.hero p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 10px auto;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #1F4E79; /* Primary blue */
+  color: white;
+  padding: 12px 28px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #D1495B; /* Coral red hover effect */
+}
+
+.quote {
+  font-style: italic;
+  margin-top: 30px;
+  font-size: 1.1rem;
+  color: #F2B705; /* Gold text */
+  border-top: 1px solid rgba(242, 183, 5, 0.4);
+  padding-top: 15px;
+}
+
+/* ============================
+   LOGO IN HERO CORNER
+============================ */
+
+.hero-logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 80px;   /* You can make this bigger or smaller */
+  opacity: 0.9;  /* Slight transparency for professional effect */
+}
+
