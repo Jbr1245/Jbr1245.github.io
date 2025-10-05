@@ -1,4 +1,4 @@
-/* Main heading */
+fix this /* Main heading */
 h1 {
   color: #1F4E79;               /* Deep Blue - Primary Color */
   font-family: 'Montserrat', sans-serif;  /* Heading font */
@@ -65,141 +65,103 @@ footer {
   font-weight: 400;
   margin-top: 40px;
 }
-/* ============================
-   HERO SECTION STYLING
-============================ */
-
 .hero {
-  position: relative; /* allows absolute positioning of images */
-  background: url('hero.jpg'); 
-  background-size: cover;
-  background-position: center;
+  position: relative;       /* allows absolute positioning of images */
   padding: 60px 20px;
-  min-height: 60vh; /* smaller hero section */
-  color: white;
+  min-height: 60vh;         /* adjust as needed */
   text-align: center;
-}
-
-.hero h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2.4rem;
-  color: #F2B705; /* Gold highlight */
-}
-
-.hero .highlight {
-  color: #D1495B; /* Coral red accent inside headings */
-}
-
-.hero p {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.1rem;
-  max-width: 800px;
-  margin: 10px auto;
-}
-
-.cta-button {
-  display: inline-block;
-  background-color: #1F4E79; /* Primary blue */
   color: white;
-  padding: 12px 28px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  margin-top: 20px;
-  transition: 0.3s;
+  background-color: #1F4E79; /* solid color hero background */
+  overflow: hidden;          /* prevents images from overflowing */
 }
 
-.cta-button:hover {
-  background-color: #D1495B; /* Coral red hover effect */
-}
-
-.quote {
-  font-style: italic;
-  margin-top: 30px;
-  font-size: 1.1rem;
-  color: #F2B705; /* Gold text */
-  border-top: 1px solid rgba(242, 183, 5, 0.4);
-  padding-top: 15px;
-}
-/* ============================
-   HERO SECTION STYLING
-============================ */
-
-.hero {
-  position: relative; /* allows absolute positioning of images */
-  background: url('hero.jpg'); 
-  background-size: cover;
-  background-position: center;
-  padding: 60px 20px;
-  min-height: 60vh; /* smaller hero section */
-  color: white;
-  text-align: center;
-}
-
-.hero h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2.4rem;
-  color: #F2B705; /* Gold highlight */
-}
-
-.hero .highlight {
-  color: #D1495B; /* Coral red accent inside headings */
-}
-
-.hero p {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.1rem;
-  max-width: 800px;
-  margin: 10px auto;
-}
-
-.cta-button {
-  display: inline-block;
-  background-color: #1F4E79; /* Primary blue */
-  color: white;
-  padding: 12px 28px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  margin-top: 20px;
-  transition: 0.3s;
-}
-
-.cta-button:hover {
-  background-color: #D1495B; /* Coral red hover effect */
-}
-
-.quote {
-  font-style: italic;
-  margin-top: 30px;
-  font-size: 1.1rem;
-  color: #F2B705; /* Gold text */
-  border-top: 1px solid rgba(242, 183, 5, 0.4);
-  padding-top: 15px;
-}
-
-/* ============================
-   LOGO IN HERO CORNER (TOP-LEFT)
-============================ */
-
+/* Logo top-left */
 .hero-logo {
   position: absolute;
   top: 20px;
   left: 20px;
-  width: 80px;   /* adjust as needed */
+  width: 80px;
   opacity: 0.9;
   z-index: 10;
 }
 
-/* ============================
-   HERO IMAGE (BOTTOM-RIGHT)
-============================ */
-
+/* Hero image bottom-right */
 .hero-image {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  width: 150px;        /* adjust size as needed */
-  border-radius: 10px;  /* optional rounded corners */
+  width: 150px;
+  border-radius: 10px;
   z-index: 5;
+}
+
+/* Hero heading */
+.hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4rem;
+  color: #F2B705;
+  margin-bottom: 20px;
+}
+
+.hero .highlight {
+  color: #D1495B;
+}
+
+/* Hero paragraph text */
+.hero p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 10px auto;
+  line-height: 1.5;
+}
+
+/* Call to Action Button */
+.cta-button {
+  display: inline-block;
+  background-color: #1F4E79;
+  color: white;
+  padding: 12px 28px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #D1495B;
+}
+
+/* Quote in Hero */
+.quote {
+  font-style: italic;
+  margin-top: 30px;
+  font-size: 1.1rem;
+  color: #F2B705;
+  border-top: 1px solid rgba(242, 183, 5, 0.4);
+  padding-top: 15px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================
+   RESPONSIVE HERO
+============================ */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .hero-logo {
+    width: 60px;
+  }
+  .hero-image {
+    width: 100px;
+    bottom: 10px;
+    right: 10px;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
 }
