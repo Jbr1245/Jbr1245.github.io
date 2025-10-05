@@ -1,52 +1,52 @@
-fix this /* Main heading */
+/* Main heading */
 h1 {
   color: #1F4E79;               /* Deep Blue - Primary Color */
-  font-family: 'Montserrat', sans-serif;  /* Heading font */
-  font-size: 48px;               /* Bigger for emphasis */
-  font-weight: 700;              /* Bold */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
   text-align: center;
-  letter-spacing: 1px;           /* Slight spacing for clarity */
+  letter-spacing: 1px;
   margin-bottom: 10px;
 }
 
 /* Navigation */
 nav p {
-  color: #F2B705;               /* Warm Gold - Secondary Color */
-  font-family: 'Open Sans', sans-serif;   /* Body font */
+  color: #F2B705; 
+  font-family: 'Open Sans', sans-serif;
   font-size: 18px;
-  font-weight: 400;              /* Regular weight */
+  font-weight: 400;
   text-align: center;
   margin-bottom: 30px;
 }
 
 /* Section headings */
 h3 {
-  color: #F2B705;               /* Warm Gold */
-  font-family: 'Montserrat', sans-serif; /* Heading font */
-  font-size: 32px;               /* Slightly larger than body */
-  font-weight: 700;              /* Bold */
+  color: #F2B705;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
   letter-spacing: 0.5px;
   margin-top: 20px;
 }
 
 /* Paragraph text */
 p {
-  color: #1F4E79;               /* Deep Blue */
-  font-family: 'Open Sans', sans-serif;  /* Body font */
+  color: #1F4E79;
+  font-family: 'Open Sans', sans-serif;
   font-size: 18px;
-  font-weight: 400;              /* Regular */
+  font-weight: 400;
   line-height: 1.6;
   margin-bottom: 15px;
 }
 
 /* Accent color for emphasis */
 strong, em {
-  color: #D1495B;               /* Coral Red - Accent Color */
+  color: #D1495B;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 600;              /* Slightly bolder for emphasis */
+  font-weight: 600;
 }
 
-/* Accent color for links */
+/* Links */
 a {
   color: #D1495B;
   text-decoration: none;
@@ -65,14 +65,18 @@ footer {
   font-weight: 400;
   margin-top: 40px;
 }
+
+/* ============================
+   HERO SECTION STYLING
+============================ */
 .hero {
-  position: relative;       /* allows absolute positioning of images */
+  position: relative;
   padding: 60px 20px;
-  min-height: 60vh;         /* adjust as needed */
+  min-height: 60vh;
   text-align: center;
   color: white;
-  background-color: #1F4E79; /* solid color hero background */
-  overflow: hidden;          /* prevents images from overflowing */
+  background-color: #1F4E79; /* dark background for hero */
+  overflow: hidden;
 }
 
 /* Logo top-left */
@@ -108,15 +112,16 @@ footer {
 }
 
 /* Hero paragraph text */
-.hero p {
+.hero .hero-content p {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.1rem;
   max-width: 800px;
   margin: 10px auto;
   line-height: 1.5;
+  color: #FFFFFF; /* White text for readability */
 }
 
-/* Call to Action Button */
+/* CTA Button */
 .cta-button {
   display: inline-block;
   background-color: #1F4E79;
@@ -138,8 +143,8 @@ footer {
   font-style: italic;
   margin-top: 30px;
   font-size: 1.1rem;
-  color: #F2B705;
-  border-top: 1px solid rgba(242, 183, 5, 0.4);
+  color: #FFFFFF; /* White quote */
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
   padding-top: 15px;
   max-width: 700px;
   margin-left: auto;
@@ -161,7 +166,7 @@ footer {
     bottom: 10px;
     right: 10px;
   }
-  .hero p {
+  .hero .hero-content p {
     font-size: 1rem;
   }
 }
