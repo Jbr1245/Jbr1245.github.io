@@ -73,7 +73,7 @@ footer {
   background: url('hero.jpg'); 
   background-size: cover;
   background-position: center;
-  padding: 120px 20px;
+  padding: 60px 20px;
   color: white;
   text-align: center;
   position: relative; /*logo placement*/
