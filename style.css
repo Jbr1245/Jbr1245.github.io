@@ -70,7 +70,7 @@ footer {
 ============================ */
 
 .hero {
-  background: url('images/hero.jpg'); 
+  background: url('hero.jpg'); 
   background-size: cover;
   background-position: center;
   padding: 120px 20px;
@@ -129,7 +129,7 @@ footer {
   position: absolute;
   top: 20px;
   left: 20px;
-  width: 80px;   /* You can make this bigger or smaller */
+  width: 80px;   /* make this bigger or smaller */
   opacity: 0.9;  /* Slight transparency for professional effect */
 }
 
