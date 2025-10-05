@@ -70,13 +70,70 @@ footer {
 ============================ */
 
 .hero {
+  position: relative; /* allows absolute positioning of images */
   background: url('hero.jpg'); 
   background-size: cover;
   background-position: center;
   padding: 60px 20px;
+  min-height: 60vh; /* smaller hero section */
   color: white;
   text-align: center;
-  position: relative; /*logo placement*/
+}
+
+.hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4rem;
+  color: #F2B705; /* Gold highlight */
+}
+
+.hero .highlight {
+  color: #D1495B; /* Coral red accent inside headings */
+}
+
+.hero p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 10px auto;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #1F4E79; /* Primary blue */
+  color: white;
+  padding: 12px 28px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #D1495B; /* Coral red hover effect */
+}
+
+.quote {
+  font-style: italic;
+  margin-top: 30px;
+  font-size: 1.1rem;
+  color: #F2B705; /* Gold text */
+  border-top: 1px solid rgba(242, 183, 5, 0.4);
+  padding-top: 15px;
+}
+/* ============================
+   HERO SECTION STYLING
+============================ */
+
+.hero {
+  position: relative; /* allows absolute positioning of images */
+  background: url('hero.jpg'); 
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px;
+  min-height: 60vh; /* smaller hero section */
+  color: white;
+  text-align: center;
 }
 
 .hero h1 {
@@ -122,14 +179,27 @@ footer {
 }
 
 /* ============================
-   LOGO IN HERO CORNER
+   LOGO IN HERO CORNER (TOP-LEFT)
 ============================ */
 
 .hero-logo {
   position: absolute;
   top: 20px;
   left: 20px;
-  width: 80px;   /* make this bigger or smaller */
-  opacity: 0.9;  /* Slight transparency for professional effect */
+  width: 80px;   /* adjust as needed */
+  opacity: 0.9;
+  z-index: 10;
 }
 
+/* ============================
+   HERO IMAGE (BOTTOM-RIGHT)
+============================ */
+
+.hero-image {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 150px;        /* adjust size as needed */
+  border-radius: 10px;  /* optional rounded corners */
+  z-index: 5;
+}
