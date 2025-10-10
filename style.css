@@ -240,45 +240,44 @@ p {
    Education Section
 ================================= */
 .education-section ul {
-  list-style-type: none; 
+  /* Removed 'list-style-type: none;' here so we can define it on the li */
   padding: 0;
   margin-bottom: 20px;
 }
 
+/* FIX: Added specific styles for the Education list items */
 .education-section li {
-  margin: 6px 0;
-  font-size: 15px;
+  /* Added bullet point (square) */
+  list-style-type: square; 
+  /* Added left padding/margin to make space for the bullet */
+  margin: 6px 0 6px 20px;
+  /* Smaller font size */
+  font-size: 15px; 
+  /* Red color */
+  color: #D1495B; 
 }
 
 /* ===============================
    Task 3: Key Skills List Styling
 ================================= */
 .key-skills {
-    /* Add padding/margin to space it out (Applies to the whole list) */
     padding-left: 35px; 
     margin-top: 15px;
 }
 
 .key-skills li {
-    /* Change the bullet type */
     list-style-type: circle; 
-    
-    /* Add font size and color */
     font-size: 18px; 
-    color: #D1495B; /* Accent red color */
-    
-    /* Add padding/margin to space out list items */
+    color: #D1495B;
     margin-bottom: 10px;
     padding: 2px 5px;
-    
-    /* Prepare for hover effect */
     transition: background-color 0.2s;
 }
 
 /* Task 3 Optional: Hover Effect */
 .key-skills li:hover {
-    background-color: #F2B705; /* Change background on hover (yellow) */
-    color: white; /* Change text color on hover */
+    background-color: #F2B705;
+    color: white; 
     cursor: pointer;
 }
 
@@ -296,7 +295,6 @@ p {
 .photo-gallery img {
   width: 250px;
   height: 180px;
-  /* Fixed image "zoom-in" issue */
   object-fit: scale-down;
   background-color: #f0f0f0;
   border-radius: 12px;
