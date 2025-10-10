@@ -198,12 +198,10 @@ header {
   padding: 10px 20px;
 }
 
-/* FIX: Ensure this class is 'logo' to match the corrected HTML, or change the HTML to 'hero-logo' */
 header .logo {
   width: 60px;
   height: 60px;
   margin-right: 15px;
-  /* Optimization: 'object-fit' is unnecessary here if the image is square and being rounded */
   border-radius: 50%;
 }
 
@@ -216,7 +214,7 @@ main {
   margin: 0 auto;
 }
 
-h1, h2 {
+h1, h2, h3 { /* Added h3 selector */
   font-family: 'Montserrat', sans-serif;
   color: #1F4E79;
 }
@@ -225,6 +223,12 @@ h2 {
   border-bottom: 2px solid #D1495B;
   padding-bottom: 5px;
   margin-top: 25px;
+}
+
+h3 {
+  /* Style for the 'Key Skills' heading */
+  margin-top: 20px;
+  color: #1F4E79; 
 }
 
 p {
@@ -236,13 +240,46 @@ p {
    Education Section
 ================================= */
 .education-section ul {
-  list-style-type: none;
+  list-style-type: none; 
   padding: 0;
+  margin-bottom: 20px;
 }
 
 .education-section li {
   margin: 6px 0;
   font-size: 15px;
+}
+
+/* ===============================
+   Task 3: Key Skills List Styling
+================================= */
+.key-skills {
+    /* Add padding/margin to space it out (Applies to the whole list) */
+    padding-left: 35px; 
+    margin-top: 15px;
+}
+
+.key-skills li {
+    /* Change the bullet type */
+    list-style-type: circle; 
+    
+    /* Add font size and color */
+    font-size: 18px; 
+    color: #D1495B; /* Accent red color */
+    
+    /* Add padding/margin to space out list items */
+    margin-bottom: 10px;
+    padding: 2px 5px;
+    
+    /* Prepare for hover effect */
+    transition: background-color 0.2s;
+}
+
+/* Task 3 Optional: Hover Effect */
+.key-skills li:hover {
+    background-color: #F2B705; /* Change background on hover (yellow) */
+    color: white; /* Change text color on hover */
+    cursor: pointer;
 }
 
 /* ===============================
@@ -259,9 +296,9 @@ p {
 .photo-gallery img {
   width: 250px;
   height: 180px;
-  /* Re-added image styles with object-fit: scale-down for anti-zoom/anti-stretch */
-  object-fit: scale-down; 
-  background-color: #f0f0f0; 
+  /* Fixed image "zoom-in" issue */
+  object-fit: scale-down;
+  background-color: #f0f0f0;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
