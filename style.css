@@ -170,166 +170,52 @@ footer {
     font-size: 1rem;
   }
 }
-/* ============================
-   PDF Resume Link Styling
-============================ */
-/* This section is currently empty, but kept for structure */
-
-
-/* ===============================
-   General Page Styling
-================================= */
-body {
-  font-family: 'Open Sans', sans-serif;
-  background-color: #E6F2FA;  /* light blue background */
-  color: #1F4E79;
-  margin: 0;
-  padding: 0;
-}
-
-/* ===============================
-   Header
-================================= */
-header {
-  display: flex;
-  align-items: center;
-  background-color: #1F4E79;
-  color: white;
-  padding: 10px 20px;
-}
-
-header .logo {
-  width: 60px;
-  height: 60px;
-  margin-right: 15px;
-  border-radius: 50%;
-}
-
-/* ===============================
-   Main Content
-================================= */
-main {
-  padding: 30px 15px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-h1, h2, h3 { /* Added h3 selector */
-  font-family: 'Montserrat', sans-serif;
-  color: #1F4E79;
-}
-
-h2 {
-  border-bottom: 2px solid #D1495B;
-  padding-bottom: 5px;
-  margin-top: 25px;
-}
-
-h3 {
-  /* Style for the 'Key Skills' heading */
-  margin-top: 20px;
-  color: #1F4E79; 
-}
-
-p {
-  line-height: 1.6;
-  font-size: 16px;
-}
-
 /* ===============================
    Education Section
 ================================= */
 .education-section ul {
-  /* Removed 'list-style-type: none;' here so we can define it on the li */
+  /* This targets the main Education list (BSME, Major, etc.) */
   padding: 0;
   margin-bottom: 20px;
 }
 
-/* FIX: Added specific styles for the Education list items */
 .education-section li {
-  /* Added bullet point (square) */
-  list-style-type: square; 
-  /* Added left padding/margin to make space for the bullet */
-  margin: 6px 0 6px 20px;
-  /* Smaller font size */
+  /* Keeping these styles neutral/default, assuming no special styling needed here */
+  list-style-type: none; /* No bullets here */
+  margin: 6px 0;
   font-size: 15px; 
-  /* Red color */
-  color: #D1495B; 
+  color: #1F4E79; /* Deep Blue color */
 }
 
 /* ===============================
-   Task 3: Key Skills List Styling
+   Task 3: Key Skills List Styling (The List You Want to Change)
 ================================= */
 .key-skills {
+    /* Add padding/margin to space it out (Applies to the whole list) */
     padding-left: 35px; 
     margin-top: 15px;
 }
 
 .key-skills li {
+    /* Change the bullet type */
     list-style-type: circle; 
-    font-size: 18px; 
-    color: #D1495B;
+    
+    /* FIX: Changed font size from 18px to 15px (smaller font) */
+    font-size: 15px; 
+    /* Red color */
+    color: #D1495B; 
+    
+    /* Add padding/margin to space out list items */
     margin-bottom: 10px;
     padding: 2px 5px;
+    
+    /* Prepare for hover effect */
     transition: background-color 0.2s;
 }
 
 /* Task 3 Optional: Hover Effect */
 .key-skills li:hover {
-    background-color: #F2B705;
-    color: white; 
+    background-color: #F2B705; /* Change background on hover (yellow) */
+    color: white; /* Change text color on hover */
     cursor: pointer;
-}
-
-/* ===============================
-   Photo Gallery
-================================= */
-.photo-gallery {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin: 30px 0;
-  flex-wrap: wrap;
-}
-
-.photo-gallery img {
-  width: 250px;
-  height: 180px;
-  object-fit: scale-down;
-  background-color: #f0f0f0;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-
-/* ===============================
-   Resume PDF Link (Box Model)
-================================= */
-.pdf-link {
-  display: inline-block;
-  background-color: #F2B705;
-  color: #1F4E79;
-  padding: 12px 24px;
-  margin-top: 20px;
-  border: 2px solid #D1495B;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s, color 0.3s; 
-}
-
-.pdf-link:hover {
-  background-color: #D1495B;
-  color: white;
-}
-
-/* ===============================
-   Footer
-================================= */
-footer {
-  text-align: center;
-  background-color: #1F4E79;
-  color: white;
-  padding: 10px 0;
-  margin-top: 40px;
 }
