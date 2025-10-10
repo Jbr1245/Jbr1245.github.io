@@ -259,11 +259,13 @@ p {
 .photo-gallery img {
   width: 250px;
   height: 180px;
-  /* Optimization: Keep object-fit for consistent sizing */
-  object-fit: cover;
+  /* Re-added image styles with object-fit: scale-down for anti-zoom/anti-stretch */
+  object-fit: scale-down; 
+  background-color: #f0f0f0; 
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+
 
 /* ===============================
    Resume PDF Link (Box Model)
@@ -278,7 +280,7 @@ p {
   border-radius: 10px;
   text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.3s, color 0.3s; /* Optimization: Specify properties for smoother transition */
+  transition: background-color 0.3s, color 0.3s; 
 }
 
 .pdf-link:hover {
