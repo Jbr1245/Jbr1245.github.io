@@ -170,3 +170,33 @@ footer {
     font-size: 1rem;
   }
 }
+/* ============================
+   PDF Resume Link Styling
+============================ */
+
+.resume-section {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.pdf-link {
+  display: inline-block;          /* enables padding, margin, border */
+  background-color: #F2B705;      /* warm gold background */
+  color: #1F4E79;                 /* deep blue text */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-decoration: none;          /* removes underline */
+  padding: 12px 24px;             /* padding inside the box */
+  margin-top: 15px;               /* space above */
+  border: 2px solid #D1495B;      /* coral-red border */
+  border-radius: 10px;            /* rounded corners */
+  transition: all 0.3s ease;      /* smooth hover animation */
+}
+
+/* Hover effect */
+.pdf-link:hover {
+  background-color: #D1495B;      /* coral red hover */
+  color: white;                   /* white text */
+  border-color: #F2B705;          /* gold border */
+}
+
