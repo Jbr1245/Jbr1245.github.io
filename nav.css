@@ -1,0 +1,81 @@
+/* === STICKY NAVIGATION BAR === */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent; /* starts transparent for hero */
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* When scrolled: subtle background + shadow */
+.scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Logo styling */
+.site-logo {
+  height: 65px;
+  width: auto;
+  border-radius: 12px;
+}
+
+/* Navigation list layout */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Links - same blue highlight and font */
+.main-nav a {
+  text-decoration: none;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #222222;
+  padding: 8px 14px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Hover and focus effects */
+.main-nav a:hover,
+.main-nav a:focus {
+  color: #ffffff;
+  background-color: #0077b6;
+  box-shadow: 0 0 10px rgba(0, 119, 182, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Active link (for current page) */
+.main-nav a.active {
+  color: #ffffff;
+  background-color: #0077b6;
+  box-shadow: 0 0 10px rgba(0, 119, 182, 0.4);
+}
+
+/* Responsive design */
+@media (max-width: 750px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 25px;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .main-nav a {
+    font-size: 1rem;
+  }
+}
