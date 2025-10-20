@@ -1,16 +1,11 @@
 /* ===== Navigation Bar Styling (Flexbox) ===== */
 .site-header {
   display: flex;
-  justify-content: space-between; /* space between logo and nav links */
+  justify-content: space-between;
   align-items: center;
-  background-color: #f4f4f4; /* light background for all pages except homepage */
+  background-color: #1F4E79; /* blue background for all pages */
   padding: 15px 40px;
   border-bottom: 2px solid #ccc;
-}
-
-/* Homepage dark header */
-.site-header.dark-header {
-  background-color: #1F4E79; /* dark blue for homepage */
 }
 
 /* Logo styling */
@@ -23,38 +18,27 @@
 .main-nav ul {
   list-style: none;
   display: flex;
-  gap: 25px; /* space between links */
+  gap: 25px;
   margin: 0;
   padding: 0;
 }
 
-/* Navigation links - default for light nav background (all pages except homepage) */
+/* Navigation links */
 .main-nav a {
   text-decoration: none;
-  color: #333; /* dark text for readability */
+  color: white; /* white text for all pages */
   font-family: 'Poppins', sans-serif;
   font-size: 1.1rem;
   font-weight: 500;
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
-/* Navigation links for homepage dark nav */
-.site-header.dark-header .main-nav a {
-  color: white; /* visible on dark background */
-}
-
-/* Hover and focus effects (applies to both light and dark navs) */
+/* Hover and focus effects */
 .main-nav a:hover,
 .main-nav a:focus {
-  color: #0077b6; /* blue accent color for light nav */
+  color: #F2B705; /* gold accent on hover */
   transform: scale(1.1);
   text-decoration: underline;
-}
-
-/* Hover effect for homepage dark nav */
-.site-header.dark-header .main-nav a:hover,
-.site-header.dark-header .main-nav a:focus {
-  color: #F2B705; /* gold accent on hover for homepage */
 }
 
 /* Responsive adjustments for smaller screens */
@@ -74,4 +58,12 @@
     display: block;
     padding: 5px 0;
   }
+}
+
+/* ===== Content Container for All Pages ===== */
+section, main {
+  max-width: 900px;       /* limits text width */
+  margin: 0 auto;         /* centers content */
+  padding: 20px;          /* spacing around text */
+  line-height: 1.6;       /* makes text easier to read */
 }
