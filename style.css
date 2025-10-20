@@ -415,3 +415,13 @@ footer {
   .contact-form input,
   .contact-form textarea { font-size: 14px; }
 }
+/* ===============================
+   ABOUT PAGE CONTENT
+================================= */
+.about-content {
+  max-width: 900px;       /* limits how wide the text can stretch */
+  margin: 0 auto;         /* centers the content horizontally */
+  padding: 20px;          /* adds space around the text */
+  text-align: center;     /* optional: center-aligns text, or use left if you prefer */
+  line-height: 1.6;       /* improves readability */
+}
