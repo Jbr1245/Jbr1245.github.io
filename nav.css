@@ -3,9 +3,14 @@
   display: flex;
   justify-content: space-between; /* space between logo and nav links */
   align-items: center;
-  background-color: #f4f4f4; /* light background to match your site */
+  background-color: #f4f4f4; /* light background for all pages except homepage */
   padding: 15px 40px;
   border-bottom: 2px solid #ccc;
+}
+
+/* Homepage dark header */
+.site-header.dark-header {
+  background-color: #1F4E79; /* dark blue for homepage */
 }
 
 /* Logo styling */
@@ -23,7 +28,7 @@
   padding: 0;
 }
 
-/* Navigation links */
+/* Navigation links - default for light nav background (all pages except homepage) */
 .main-nav a {
   text-decoration: none;
   color: #333; /* dark text for readability */
@@ -33,12 +38,23 @@
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
-/* Hover and focus effects */
+/* Navigation links for homepage dark nav */
+.site-header.dark-header .main-nav a {
+  color: white; /* visible on dark background */
+}
+
+/* Hover and focus effects (applies to both light and dark navs) */
 .main-nav a:hover,
 .main-nav a:focus {
-  color: #0077b6; /* blue accent color */
+  color: #0077b6; /* blue accent color for light nav */
   transform: scale(1.1);
   text-decoration: underline;
+}
+
+/* Hover effect for homepage dark nav */
+.site-header.dark-header .main-nav a:hover,
+.site-header.dark-header .main-nav a:focus {
+  color: #F2B705; /* gold accent on hover for homepage */
 }
 
 /* Responsive adjustments for smaller screens */
