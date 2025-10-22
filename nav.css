@@ -118,3 +118,30 @@ nav.main-nav ul.dropdown-content {
 #menu-toggle:checked + .menu-button + ul.dropdown-content {
   display: flex !important;
 }
+/* ===== Always keep ☰ Menu visible on all screens ===== */
+.menu-button {
+  display: inline-block !important;
+}
+
+/* ===== Fix dropdown visibility for all screen sizes ===== */
+.dropdown-content {
+  display: none;
+}
+
+#menu-toggle:checked + .menu-button + .dropdown-content {
+  display: flex !important;
+  flex-direction: column;
+}
+
+/* ===== Optional: Smooth dropdown animation ===== */
+.dropdown-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+#menu-toggle:checked + .menu-button + .dropdown-content {
+  opacity: 1;
+  max-height: 500px;
+}
