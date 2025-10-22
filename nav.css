@@ -1,10 +1,10 @@
 /* ===== Navigation Bar Styling ===== */
 .site-header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   background-color: #1F4E79;
-  padding: 15px 40px;
+  padding: 15px 20px;
   border-bottom: 2px solid #ccc;
 }
 
@@ -12,56 +12,59 @@
 .site-logo {
   height: 60px;
   width: auto;
+  margin-bottom: 10px;
 }
 
 /* ===== Dropdown Menu ===== */
 .main-nav {
   position: relative;
+  text-align: center;
 }
 
-/* Hide the checkbox */
+/* Hide the checkbox (for CSS-only toggle) */
 #menu-toggle {
   display: none;
 }
 
 /* Menu button */
 .menu-button {
+  background-color: #1F4E79;
   color: white;
   font-family: 'Poppins', sans-serif;
   font-size: 1.2rem;
   font-weight: 500;
+  padding: 8px 16px;
+  border: 2px solid white;
+  border-radius: 6px;
   cursor: pointer;
   user-select: none;
-  transition: color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .menu-button:hover {
+  background-color: #2B6CA3;
   color: #F2B705;
 }
 
-/* Dropdown hidden by default */
+/* Dropdown menu container */
 .dropdown-content {
   display: none;
-  position: absolute;
-  right: 0;
-  top: 100%;
+  flex-direction: column;
   background-color: #1F4E79;
-  border: 1px solid #ccc;
   border-radius: 6px;
-  min-width: 160px;
   list-style: none;
   padding: 0;
   margin: 10px 0 0 0;
+  border: 1px solid #ccc;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  z-index: 999;
 }
 
-/* Show dropdown when checkbox is checked */
+/* When checkbox is checked, show dropdown */
 #menu-toggle:checked + .menu-button + .dropdown-content {
-  display: block;
+  display: flex;
 }
 
-/* Each link in dropdown */
+/* Each link */
 .dropdown-content li a {
   display: block;
   padding: 12px 20px;
@@ -77,17 +80,38 @@
   color: #F2B705;
 }
 
+/* Active link styling */
+.dropdown-content li a.active {
+  color: #F2B705;
+  text-decoration: underline;
+}
+
 /* Responsive adjustments */
-@media (max-width: 700px) {
+@media (min-width: 800px) {
   .site-header {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .main-nav {
+    text-align: right;
+  }
+
+  .menu-button {
+    border: 2px solid #F2B705;
   }
 
   .dropdown-content {
-    position: static;
-    width: 100%;
-    box-shadow: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 180px;
+    align-items: flex-start;
+  }
+
+  #menu-toggle:checked + .menu-button + .dropdown-content {
+    display: flex;
   }
 }
 
