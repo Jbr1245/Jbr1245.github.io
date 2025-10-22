@@ -110,3 +110,11 @@ section, main {
   padding: 20px;
   line-height: 1.6;
 }
+nav.main-nav ul.dropdown-content {
+  display: none !important;
+  flex-direction: column !important;
+}
+
+#menu-toggle:checked + .menu-button + ul.dropdown-content {
+  display: flex !important;
+}
