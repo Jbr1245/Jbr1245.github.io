@@ -1,9 +1,9 @@
-/* ===== Navigation Bar Styling (Flexbox) ===== */
+/* ===== Navigation Bar Styling ===== */
 .site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1F4E79; /* blue background for all pages */
+  background-color: #1F4E79;
   padding: 15px 40px;
   border-bottom: 2px solid #ccc;
 }
@@ -19,6 +19,12 @@
   position: relative;
 }
 
+/* Hide the checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Menu button */
 .menu-button {
   color: white;
   font-family: 'Poppins', sans-serif;
@@ -33,7 +39,7 @@
   color: #F2B705;
 }
 
-/* Hidden by default */
+/* Dropdown hidden by default */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -47,14 +53,15 @@
   padding: 0;
   margin: 10px 0 0 0;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 999;
 }
 
-/* Show dropdown on hover */
-.main-nav:hover .dropdown-content {
+/* Show dropdown when checkbox is checked */
+#menu-toggle:checked + .menu-button + .dropdown-content {
   display: block;
 }
 
-/* Each menu link */
+/* Each link in dropdown */
 .dropdown-content li a {
   display: block;
   padding: 12px 20px;
@@ -84,11 +91,10 @@
   }
 }
 
-/* ===== Content Container for All Pages ===== */
+/* ===== Content Container ===== */
 section, main {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
   line-height: 1.6;
 }
-
