@@ -37,12 +37,14 @@ header .logo, header .site-logo {
 }
 
 /* Navigation list layout using Flexbox */
-nav.main-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
+@media (min-width: 800px) {
+  nav.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 /* ===============================
