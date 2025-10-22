@@ -26,7 +26,7 @@
   display: none;
 }
 
-/* Menu button */
+/* Menu button (☰ Menu) */
 .menu-button {
   background-color: #1F4E79;
   color: white;
@@ -39,7 +39,7 @@
   cursor: pointer;
   user-select: none;
   transition: background-color 0.3s ease, color 0.3s ease;
-  display: inline-block;
+  display: inline-block !important; /* always visible */
 }
 
 .menu-button:hover {
@@ -59,11 +59,19 @@
   border: 1px solid #ccc;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   width: 200px;
+
+  /* smooth animation */
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
 }
 
 /* Show menu when checkbox is checked */
 #menu-toggle:checked + .menu-button + .dropdown-content {
   display: flex;
+  opacity: 1;
+  max-height: 500px;
 }
 
 /* Menu links */
@@ -88,7 +96,7 @@
   text-decoration: underline;
 }
 
-/* Responsive layout tweaks (optional, keeps centered layout) */
+/* ===== Responsive layout tweaks ===== */
 @media (min-width: 800px) {
   .site-header {
     flex-direction: column;
@@ -109,39 +117,4 @@ section, main {
   margin: 0 auto;
   padding: 20px;
   line-height: 1.6;
-}
-nav.main-nav ul.dropdown-content {
-  display: none !important;
-  flex-direction: column !important;
-}
-
-#menu-toggle:checked + .menu-button + ul.dropdown-content {
-  display: flex !important;
-}
-/* ===== Always keep ☰ Menu visible on all screens ===== */
-.menu-button {
-  display: inline-block !important;
-}
-
-/* ===== Fix dropdown visibility for all screen sizes ===== */
-.dropdown-content {
-  display: none;
-}
-
-#menu-toggle:checked + .menu-button + .dropdown-content {
-  display: flex !important;
-  flex-direction: column;
-}
-
-/* ===== Optional: Smooth dropdown animation ===== */
-.dropdown-content {
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.4s ease;
-}
-
-#menu-toggle:checked + .menu-button + .dropdown-content {
-  opacity: 1;
-  max-height: 500px;
 }
