@@ -427,3 +427,41 @@ footer {
   text-align: left;       /* keeps paragraphs left-aligned */
   line-height: 1.6;       /* improves readability */
 }
+/* ===============================
+   ABOUT PAGE MEDIA (Image + Video)
+================================= */
+.about-media {
+  max-width: 950px;
+  margin: 40px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.about-image, .about-video {
+  text-align: center;
+  width: 420px;
+}
+
+.about-image img,
+.about-video video {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.about-image figcaption,
+.about-video figcaption {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #1F4E79;
+  font-style: italic;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 600px) {
+  .about-image, .about-video {
+    width: 100%;
+  }
+}
