@@ -476,3 +476,8 @@ footer { background:#1F4E79; color:white; text-align:center; padding:20px 0; }
 .footer-contact a:hover { text-decoration:underline; }
 .divider { margin:0 10px; color:white; font-weight:bold; }
 .footer-credit { margin-top:8px; font-size:14px; opacity:0.9; }
+.footer-contact span,
+.footer-contact p,
+.footer-contact .phone-text {
+  color: white !important;
+}
