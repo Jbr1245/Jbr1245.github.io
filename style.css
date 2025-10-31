@@ -481,3 +481,49 @@ footer { background:#1F4E79; color:white; text-align:center; padding:20px 0; }
 .footer-contact .phone-text {
   color: white !important;
 }
+
+/* ===== Print Styles for about.html ===== */
+@media print {
+  /* Set all margins to 1 inch */
+  @page {
+    margin: 1in;
+  }
+
+  /* Make everything black & serif font */
+  body {
+    color: black;
+    font-family: "Times New Roman", serif;
+    background: white;
+  }
+
+  /* Only show key elements */
+  header, nav, img, .site-logo, .main-nav, .hero, .projects, .goals {
+    display: none !important;
+  }
+
+  /* Keep your name, description, education, and footer visible */
+  h1, p, ul, ol, footer {
+    display: block;
+  }
+
+  footer img {
+    display: none;
+  }
+
+  footer {
+    font-size: 12pt;
+    text-align: left;
+    margin-top: 40px;
+  }
+
+  /* Adjust spacing to fit one page */
+  h1 {
+    font-size: 20pt;
+    margin-bottom: 10px;
+  }
+
+  p, ul, ol {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+}
