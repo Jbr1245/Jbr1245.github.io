@@ -485,78 +485,76 @@ footer { background:#1F4E79; color:white; text-align:center; padding:20px 0; }
 
 /* ===== Print Styles for about.html ===== */
 @media print {
-  /* Standard U.S. Letter size page */
+  /* Page margin */
   @page {
-    size: letter;
-    margin: 0.75in; /* slightly smaller margins to fit content */
+    margin: 1in;
   }
 
-  /* Base print setup */
+  /* Basic body setup */
   body {
     color: black;
     font-family: "Times New Roman", serif;
     background: white;
+    font-size: 11pt;
+    line-height: 1.3;
     margin: 0;
     padding: 0;
   }
 
-  /* Hide all unnecessary sections */
-  header, nav, img, .site-logo, .main-nav, .hero, .projects, .goals {
+  /* Hide all visual/media elements */
+  header,
+  nav,
+  img,
+  video,
+  .about-media,
+  .photo-gallery,
+  .pdf-link,
+  .key-skills,
+  .site-logo,
+  .main-nav {
     display: none !important;
   }
 
-  /* Show only what’s needed */
-  h1, p, ul, ol, footer {
-    display: block !important;
-    color: black !important;
-  }
-
-  /* Footer cleanup */
-  footer img, footer i, footer svg {
-    display: none !important;
-  }
-
+  /* Show only text sections you need */
+  .about-section,
+  .education-section,
   footer {
-    font-size: 10pt;
-    text-align: left;
-    margin-top: 10px;
-    border-top: 1px solid black;
-    padding-top: 5px;
+    display: block;
   }
 
-  /* Compact text spacing */
-  h1 {
-    font-size: 16pt;
-    margin: 0 0 6px 0;
-  }
-
-  p, ul, ol {
-    font-size: 10.5pt;
-    line-height: 1.3;
+  /* Compress spacing for titles */
+  h1, h2, h3 {
+    font-size: 14pt;
     margin: 0 0 6px 0;
     padding: 0;
   }
 
+  /* Body text spacing */
+  p, li {
+    font-size: 11pt;
+    margin: 0 0 5px 0;
+  }
+
   ul, ol {
-    padding-left: 18px;
+    padding-left: 20px;
   }
 
-  /* Prevent page breaks */
-  * {
-    background: none !important;
-    page-break-inside: avoid;
+  /* Footer contact info only */
+  footer {
+    font-size: 10pt;
+    margin-top: 15px;
+    text-align: left;
+    border-top: 1px solid black;
+    padding-top: 5px;
   }
 
-  html, body {
-    height: 100%;
+  footer img {
+    display: none !important;
+  }
+
+  /* Fit all on one page */
+  main {
+    max-height: 10.5in; /* Keeps within one printed page */
     overflow: hidden;
   }
-
-  /* Scale everything down slightly to fit one page */
-  body {
-    transform: scale(0.95);
-    transform-origin: top left;
-    width: 105%;
-  }
 }
-
