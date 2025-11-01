@@ -44,34 +44,59 @@
       </ul>
 
       <h2>Send a Message</h2>
-      <form action="#" method="post">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" placeholder="Your Name" required><br><br>
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" placeholder="Your Email" required><br><br>
+      <form class="contact-form" action="#" method="post">
 
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea><br><br>
+        <!-- Title -->
+        <label for="title">Title:</label>
+        <select id="title" name="title" required>
+          <option value="" disabled selected>Select your title</option>
+          <option value="Mr">Mr.</option>
+          <option value="Ms">Ms.</option>
+          <option value="Dr">Dr.</option>
+        </select>
 
+        <!-- Full Name -->
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+        <!-- Email -->
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <!-- Message -->
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+        <!-- Topic Dropdown -->
+        <label for="topic">Topic:</label>
+        <select id="topic" name="topic" required>
+          <option value="" disabled selected>Select a topic</option>
+          <option value="general">General Inquiry</option>
+          <option value="project">Project Question</option>
+          <option value="feedback">Feedback</option>
+        </select>
+
+        <!-- Submit Button -->
         <button type="submit">Send</button>
       </form>
-    </section>
+    </section> 
+
   </main>
 
   <!-- Footer with Contact Icons -->
- <footer>
-  <div class="footer-contact">
-    <p>
-      <img src="phone.ico" alt="Phone icon" class="footer-icon">
-      (224) 508-1573
-      <span class="divider">|</span>
-      <img src="envelope.ico" alt="Email icon" class="footer-icon">
-      <a href="mailto:jamelly.ramirez@gmail.com">jamelly.ramirez@gmail.com</a>
-    </p>
-  </div>
-  <p class="footer-credit">Jamelly Ramirez — October 2025</p>
-</footer>
+  <footer>
+    <div class="footer-contact">
+      <p>
+        <img src="phone.ico" alt="Phone icon" class="footer-icon">
+        (224) 508-1573
+        <span class="divider">|</span>
+        <img src="envelope.ico" alt="Email icon" class="footer-icon">
+        <a href="mailto:jamelly.ramirez@gmail.com">jamelly.ramirez@gmail.com</a>
+      </p>
+    </div>
+    <p class="footer-credit">Jamelly Ramirez — November 2025</p>
+  </footer>
 
 </body>
 </html>

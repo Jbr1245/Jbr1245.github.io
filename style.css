@@ -485,64 +485,78 @@ footer { background:#1F4E79; color:white; text-align:center; padding:20px 0; }
 
 /* ===== Print Styles for about.html ===== */
 @media print {
-  /* Set all margins to 1 inch and prevent auto scaling */
+  /* Standard U.S. Letter size page */
   @page {
-    margin: 1in;
-    size: letter; /* Ensures it fits standard printer page */
+    size: letter;
+    margin: 0.75in; /* slightly smaller margins to fit content */
   }
 
-  /* Make everything black & serif font */
+  /* Base print setup */
   body {
     color: black;
     font-family: "Times New Roman", serif;
     background: white;
-    margin: 0; /* avoid extra spacing */
+    margin: 0;
+    padding: 0;
   }
 
-  /* Hide all non-essential elements */
+  /* Hide all unnecessary sections */
   header, nav, img, .site-logo, .main-nav, .hero, .projects, .goals {
     display: none !important;
   }
 
-  /* Only show main text and footer */
+  /* Show only what’s needed */
   h1, p, ul, ol, footer {
     display: block !important;
     color: black !important;
   }
 
+  /* Footer cleanup */
   footer img, footer i, footer svg {
-    display: none !important; /* hide icons/logos */
+    display: none !important;
   }
 
   footer {
-    font-size: 11pt;
+    font-size: 10pt;
     text-align: left;
-    margin-top: 20px;
+    margin-top: 10px;
     border-top: 1px solid black;
-    padding-top: 8px;
+    padding-top: 5px;
   }
 
-  /* Adjust spacing to fit on one page */
+  /* Compact text spacing */
   h1 {
-    font-size: 18pt;
-    margin-bottom: 6px;
+    font-size: 16pt;
+    margin: 0 0 6px 0;
   }
 
   p, ul, ol {
-    font-size: 11pt;
-    line-height: 1.4;
-    margin: 0 0 10px 0;
+    font-size: 10.5pt;
+    line-height: 1.3;
+    margin: 0 0 6px 0;
+    padding: 0;
   }
 
-  /* Prevent content cutoff or weird page breaks */
+  ul, ol {
+    padding-left: 18px;
+  }
+
+  /* Prevent page breaks */
   * {
     background: none !important;
     page-break-inside: avoid;
   }
 
   html, body {
-    height: auto;
-    overflow: visible;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  /* Scale everything down slightly to fit one page */
+  body {
+    transform: scale(0.95);
+    transform-origin: top left;
+    width: 105%;
   }
 }
 
