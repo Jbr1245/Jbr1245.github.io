@@ -485,9 +485,10 @@ footer { background:#1F4E79; color:white; text-align:center; padding:20px 0; }
 
 /* ===== Print Styles for about.html ===== */
 @media print {
-  /* Set all margins to 1 inch */
+  /* Set all margins to 1 inch and prevent auto scaling */
   @page {
     margin: 1in;
+    size: letter; /* Ensures it fits standard printer page */
   }
 
   /* Make everything black & serif font */
@@ -495,36 +496,53 @@ footer { background:#1F4E79; color:white; text-align:center; padding:20px 0; }
     color: black;
     font-family: "Times New Roman", serif;
     background: white;
+    margin: 0; /* avoid extra spacing */
   }
 
-  /* Only show key elements */
+  /* Hide all non-essential elements */
   header, nav, img, .site-logo, .main-nav, .hero, .projects, .goals {
     display: none !important;
   }
 
-  /* Keep your name, description, education, and footer visible */
+  /* Only show main text and footer */
   h1, p, ul, ol, footer {
-    display: block;
+    display: block !important;
+    color: black !important;
   }
 
-  footer img {
-    display: none;
+  footer img, footer i, footer svg {
+    display: none !important; /* hide icons/logos */
   }
 
   footer {
-    font-size: 12pt;
+    font-size: 11pt;
     text-align: left;
-    margin-top: 40px;
+    margin-top: 20px;
+    border-top: 1px solid black;
+    padding-top: 8px;
   }
 
-  /* Adjust spacing to fit one page */
+  /* Adjust spacing to fit on one page */
   h1 {
-    font-size: 20pt;
-    margin-bottom: 10px;
+    font-size: 18pt;
+    margin-bottom: 6px;
   }
 
   p, ul, ol {
-    font-size: 12pt;
-    line-height: 1.5;
+    font-size: 11pt;
+    line-height: 1.4;
+    margin: 0 0 10px 0;
+  }
+
+  /* Prevent content cutoff or weird page breaks */
+  * {
+    background: none !important;
+    page-break-inside: avoid;
+  }
+
+  html, body {
+    height: auto;
+    overflow: visible;
   }
 }
+
