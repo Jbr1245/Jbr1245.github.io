@@ -558,3 +558,37 @@ footer { background:#1F4E79; color:white; text-align:center; padding:20px 0; }
     overflow: hidden;
   }
 }
+/* ===============================
+   ABOUT PAGE GRID LAYOUT
+================================= */
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two-column layout */
+  grid-template-areas:
+    "about education"
+    "media education"
+    "gallery gallery"
+    "resume resume";
+  gap: 40px;
+  padding: 40px;
+}
+
+/* Assign each section to a grid area */
+.about-section { grid-area: about; }
+.education-section { grid-area: education; }
+.about-media { grid-area: media; }
+.photo-gallery { grid-area: gallery; }
+.pdf-link { grid-area: resume; }
+
+/* Responsive layout for mobile */
+@media (max-width: 800px) {
+  main {
+    grid-template-columns: 1fr; /* stack all vertically */
+    grid-template-areas:
+      "about"
+      "education"
+      "media"
+      "gallery"
+      "resume";
+  }
+}
