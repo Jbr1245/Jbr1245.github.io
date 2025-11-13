@@ -15,18 +15,18 @@
   margin-bottom: 10px;
 }
 
-/* ===== Dropdown Menu ===== */
+/* ===== Navigation Styling ===== */
 .main-nav {
   position: relative;
   text-align: center;
 }
 
-/* Hide the checkbox (for CSS-only toggle) */
+/* Hide checkbox */
 #menu-toggle {
   display: none;
 }
 
-/* Menu button (☰ Menu) */
+/* Hamburger button (hidden on large screens by default) */
 .menu-button {
   background-color: #1F4E79;
   color: white;
@@ -39,7 +39,7 @@
   cursor: pointer;
   user-select: none;
   transition: background-color 0.3s ease, color 0.3s ease;
-  display: none;
+  display: none; /* Hidden by default */
 }
 
 .menu-button:hover {
@@ -47,34 +47,18 @@
   color: #F2B705;
 }
 
-/* Dropdown menu container (hidden by default) */
+/* Dropdown menu container (shown on large screens) */
 .dropdown-content {
-  display: none;
-  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
   background-color: #1F4E79;
-  border-radius: 6px;
   list-style: none;
   padding: 0;
   margin: 10px 0 0 0;
-  border: 1px solid #ccc;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  width: 200px;
-
-  /* smooth animation */
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.4s ease;
+  gap: 20px;
 }
 
-/* Show menu when checkbox is checked */
-#menu-toggle:checked + .menu-button + .dropdown-content {
-  display: flex;
-  opacity: 1;
-  max-height: 500px;
-}
-
-/* Menu links */
 .dropdown-content li a {
   display: block;
   padding: 12px 20px;
@@ -90,24 +74,47 @@
   color: #F2B705;
 }
 
-/* Active link styling */
+/* Active link */
 .dropdown-content li a.active {
   color: #F2B705;
   text-decoration: underline;
 }
 
-/* ===== Responsive layout tweaks ===== */
-@media (min-width: 800px) {
+/* ===== MOBILE STYLING ===== */
+@media (max-width: 800px) {
+  /* Header layout for mobile */
   .site-header {
     flex-direction: column;
-  }
-
-  .main-nav {
-    text-align: center;
-  }
-
-  .dropdown-content {
     align-items: center;
+  }
+
+  /* Show hamburger */
+  .menu-button {
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  /* Hide nav links initially */
+  .dropdown-content {
+    display: none;
+    flex-direction: column;
+    background-color: #1F4E79;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin-top: 10px;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+  }
+
+  /* Show dropdown when toggled */
+  #menu-toggle:checked + .menu-button + .dropdown-content {
+    display: flex;
+    opacity: 1;
+    max-height: 500px;
   }
 }
 
@@ -117,22 +124,4 @@ section, main {
   margin: 0 auto;
   padding: 20px;
   line-height: 1.6;
-}
-/* ===== Mobile View (under 800px) ===== */
-@media (max-width: 800px) {
-  /* Show hamburger icon */
-  .menu-button {
-    display: inline-block;
-  }
-
-  /* Hide the full navigation list */
-  .main-nav ul {
-    display: none;
-  }
-
-  /* Optional: make header layout cleaner on mobile */
-  .site-header {
-    flex-direction: column;
-    align-items: center;
-  }
 }
