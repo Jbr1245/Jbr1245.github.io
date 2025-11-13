@@ -1,7 +1,7 @@
 /* ===== Navigation Bar Styling ===== */
 .site-header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   background-color: #1F4E79;
   padding: 15px 20px;
@@ -12,109 +12,84 @@
 .site-logo {
   height: 60px;
   width: auto;
-  margin-bottom: 10px;
 }
 
-/* ===== Dropdown Menu ===== */
-.main-nav {
-  position: relative;
-  text-align: center;
-}
-
-/* Hide the checkbox (for CSS-only toggle) */
-#menu-toggle {
-  display: none;
-}
-
-/* Menu button (☰ Menu) */
-.menu-button {
-  background-color: #1F4E79;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 500;
-  padding: 8px 16px;
-  border: 2px solid white;
-  border-radius: 6px;
-  cursor: pointer;
-  user-select: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  display: inline-block !important; /* always visible */
-}
-
-.menu-button:hover {
-  background-color: #2B6CA3;
-  color: #F2B705;
-}
-
-/* Dropdown menu container (hidden by default) */
-.dropdown-content {
-  display: none;
-  flex-direction: column;
-  background-color: #1F4E79;
-  border-radius: 6px;
-  list-style: none;
-  padding: 0;
-  margin: 10px 0 0 0;
-  border: 1px solid #ccc;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  width: 200px;
-
-  /* smooth animation */
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.4s ease;
-}
-
-/* Show menu when checkbox is checked */
-#menu-toggle:checked + .menu-button + .dropdown-content {
+/* Navigation menu (desktop view) */
+.main-nav ul {
   display: flex;
-  opacity: 1;
-  max-height: 500px;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
 }
 
-/* Menu links */
-.dropdown-content li a {
-  display: block;
-  padding: 12px 20px;
-  color: white;
+.main-nav a {
   text-decoration: none;
+  color: white;
   font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.dropdown-content li a:hover {
-  background-color: #2B6CA3;
+.main-nav a:hover {
   color: #F2B705;
 }
 
-/* Active link styling */
-.dropdown-content li a.active {
-  color: #F2B705;
-  text-decoration: underline;
+/* Hamburger Icon (☰) */
+.menu-icon {
+  display: none; /* hidden on large screens */
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
 }
 
-/* ===== Responsive layout tweaks ===== */
-@media (min-width: 800px) {
+/* ===== Responsive Navigation (Mobile) ===== */
+@media screen and (max-width: 768px) {
+  /* Stack header items */
   .site-header {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
-  .main-nav {
-    text-align: center;
+  /* Hide full nav menu */
+  .main-nav ul {
+    display: none;
   }
 
-  .dropdown-content {
-    align-items: center;
+  /* Show hamburger icon */
+  .menu-icon {
+    display: block;
+  }
+
+  /* Optional: adjust logo */
+  .site-logo {
+    height: 50px;
   }
 }
 
-/* ===== Content Container ===== */
-section, main {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-  line-height: 1.6;
+/* ===== Footer Styling ===== */
+footer {
+  background-color: #E6F2FA;
+  text-align: center;
+  padding: 15px;
+  color: #1F4E79;
+}
+
+.footer-contact {
+  margin-bottom: 8px;
+}
+
+.footer-icon {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+}
+
+.divider {
+  margin: 0 8px;
+  color: #1F4E79;
+}
+
+.footer-credit {
+  font-size: 0.9rem;
 }
