@@ -3,20 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Jamelly Ramirez</title>
+  <title>Home</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="nav.css">
+  <link rel="stylesheet" href="nav.css"> <!-- new stylesheet for nav -->
+
+  <style>
+    .site-header { display: flex; justify-content: space-between; align-items: center; background-color: #eee; padding: 10px; }
+    .main-nav ul { display: flex; list-style: none; gap: 20px; margin: 0; padding: 0; }
+    .main-nav a { text-decoration: none; color: #333; }
+  </style>
 </head>
 
 <body>
-  <!-- ===== Header Section ===== -->
+
+  <!-- Header with Logo and Navigation -->
   <header class="site-header">
     <img src="logo.png" alt="Jamelly Ramirez Logo" class="site-logo">
 
-    <!-- Hamburger Icon -->
-    <div class="menu-icon">&#9776;</div>
-
-    <!-- Navigation Menu -->
     <nav class="main-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -28,7 +31,7 @@
     </nav>
   </header>
 
-  <!-- ===== Hero Section ===== -->
+  <!-- HERO SECTION ONLY -->
   <section class="hero">
     <div class="hero-content">
       <h1>Hi there! Welcome to my website — I'm <span class="highlight">Jamelly Ramirez</span>, an aspiring Mechanical Engineer who loves challenges.</h1>
@@ -41,8 +44,11 @@
         As a first-generation Mexican-American student, my journey reflects persistence, hard work, and a passion for learning.
         Here, you'll find my academic background, projects, and experiences that have shaped my identity as both a student and an aspiring professional.
         My goals are to graduate ahead of schedule, gain valuable internship experiences, and develop expertise in CAD, welding, and mechanical design.
+        This site is not only about my skills — it's about telling my story, documenting my growth, and connecting with those who share my vision
+        for creating innovative, impactful engineering solutions.
       </p>
 
+      <!-- Call to Action Button -->
       <a href="about.html" class="cta-button">Learn More About Me</a>
 
       <blockquote class="quote">
@@ -51,18 +57,22 @@
     </div>
   </section>
 
-  <!-- ===== Footer Section ===== -->
-  <footer>
-    <div class="footer-contact">
-      <p>
-        <img src="phone.ico" alt="Phone icon" class="footer-icon">
-        (224) 508-1573
-        <span class="divider">|</span>
-        <img src="envelope.ico" alt="Email icon" class="footer-icon">
-        <a href="mailto:jamelly.ramirez@gmail.com">jamelly.ramirez@gmail.com</a>
-      </p>
-    </div>
-    <p class="footer-credit">Jamelly Ramirez — October 2025</p>
-  </footer>
+  <!-- Footer -->
+   <footer>
+  <div class="footer-contact">
+    <p>
+      <img src="phone.ico" alt="Phone icon" class="footer-icon">
+      (224) 508-1573
+      <span class="divider">|</span>
+      <img src="envelope.ico" alt="Email icon" class="footer-icon">
+      <a href="mailto:jamelly.ramirez@gmail.com">jamelly.ramirez@gmail.com</a>
+    </p>
+  </div>
+  <p class="footer-credit">Jamelly Ramirez — October 2025</p>
+</footer>
+
 </body>
 </html>
+
+
+
