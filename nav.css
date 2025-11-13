@@ -39,7 +39,7 @@
   cursor: pointer;
   user-select: none;
   transition: background-color 0.3s ease, color 0.3s ease;
-  display: inline-block !important; /* always visible */
+  display: none;
 }
 
 .menu-button:hover {
@@ -117,4 +117,22 @@ section, main {
   margin: 0 auto;
   padding: 20px;
   line-height: 1.6;
+}
+/* ===== Mobile View (under 800px) ===== */
+@media (max-width: 800px) {
+  /* Show hamburger icon */
+  .menu-button {
+    display: inline-block;
+  }
+
+  /* Hide the full navigation list */
+  .main-nav ul {
+    display: none;
+  }
+
+  /* Optional: make header layout cleaner on mobile */
+  .site-header {
+    flex-direction: column;
+    align-items: center;
+  }
 }
