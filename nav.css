@@ -26,7 +26,7 @@
   display: none;
 }
 
-/* Hamburger button (hidden on large screens by default) */
+/* Hamburger button */
 .menu-button {
   background-color: #1F4E79;
   color: white;
@@ -39,7 +39,7 @@
   cursor: pointer;
   user-select: none;
   transition: background-color 0.3s ease, color 0.3s ease;
-  display: none; /* Hidden by default */
+  display: none; /* Hidden on desktop */
 }
 
 .menu-button:hover {
@@ -47,7 +47,7 @@
   color: #F2B705;
 }
 
-/* Dropdown menu container (shown on large screens) */
+/* ===== Main Nav Links ===== */
 .dropdown-content {
   display: flex;
   justify-content: center;
@@ -80,13 +80,36 @@
   text-decoration: underline;
 }
 
+/* ===== SUBMENU FOR PROJECTS ===== */
+.dropdown {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  background-color: #1F4E79;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0;
+  min-width: 150px;
+  z-index: 1000;
+}
+
+.dropdown:hover .submenu {
+  display: flex;
+}
+
+.submenu li a {
+  padding: 10px 14px;
+  font-size: 0.95rem;
+}
+
 /* ===== MOBILE STYLING ===== */
 @media (max-width: 800px) {
-  /* Header layout for mobile */
-  .site-header {
-    flex-direction: column;
-    align-items: center;
-  }
 
   /* Show hamburger */
   .menu-button {
@@ -94,7 +117,7 @@
     margin-top: 10px;
   }
 
-  /* Hide nav links initially */
+  /* Hide nav items until clicked */
   .dropdown-content {
     display: none;
     flex-direction: column;
@@ -110,11 +133,29 @@
     transition: all 0.4s ease;
   }
 
-  /* Show dropdown when toggled */
+  /* When checked → show menu */
   #menu-toggle:checked + .menu-button + .dropdown-content {
     display: flex;
     opacity: 1;
-    max-height: 500px;
+    max-height: 600px;
+  }
+
+  /* Mobile submenu acts like a simple indent */
+  .submenu {
+    position: static;
+    border: none;
+    background: none;
+    box-shadow: none;
+    padding-left: 20px;
+  }
+
+  .dropdown:hover .submenu {
+    display: none; /* prevent hover behavior */
+  }
+
+  /* Submenu opens under Projects */
+  .dropdown .submenu {
+    display: flex !important;
   }
 }
 
