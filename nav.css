@@ -8,25 +8,21 @@
   border-bottom: 2px solid #ccc;
 }
 
-/* Logo styling */
 .site-logo {
   height: 60px;
   width: auto;
   margin-bottom: 10px;
 }
 
-/* ===== Navigation Styling ===== */
 .main-nav {
   position: relative;
   text-align: center;
 }
 
-/* Hide checkbox */
 #menu-toggle {
   display: none;
 }
 
-/* Hamburger button */
 .menu-button {
   background-color: #1F4E79;
   color: white;
@@ -38,8 +34,8 @@
   border-radius: 6px;
   cursor: pointer;
   user-select: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  display: none; /* Hidden on desktop */
+  transition: 0.3s;
+  display: none;
 }
 
 .menu-button:hover {
@@ -47,7 +43,6 @@
   color: #F2B705;
 }
 
-/* ===== Main Nav Links ===== */
 .dropdown-content {
   display: flex;
   justify-content: center;
@@ -66,7 +61,7 @@
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
-  transition: background-color 0.3s ease;
+  transition: 0.3s;
 }
 
 .dropdown-content li a:hover {
@@ -74,13 +69,11 @@
   color: #F2B705;
 }
 
-/* Active link */
 .dropdown-content li a.active {
   color: #F2B705;
   text-decoration: underline;
 }
 
-/* ===== SUBMENU FOR PROJECTS ===== */
 .dropdown {
   position: relative;
 }
@@ -110,14 +103,11 @@
 
 /* ===== MOBILE STYLING ===== */
 @media (max-width: 800px) {
-
-  /* Show hamburger */
   .menu-button {
     display: inline-block;
     margin-top: 10px;
   }
 
-  /* Hide nav items until clicked */
   .dropdown-content {
     display: none;
     flex-direction: column;
@@ -133,14 +123,12 @@
     transition: all 0.4s ease;
   }
 
-  /* When checked → show menu */
   #menu-toggle:checked + .menu-button + .dropdown-content {
     display: flex;
     opacity: 1;
     max-height: 600px;
   }
 
-  /* Mobile submenu acts like a simple indent */
   .submenu {
     position: static;
     border: none;
@@ -150,19 +138,10 @@
   }
 
   .dropdown:hover .submenu {
-    display: none; /* prevent hover behavior */
+    display: none;
   }
 
-  /* Submenu opens under Projects */
   .dropdown .submenu {
     display: flex !important;
   }
-}
-
-/* ===== Content Container ===== */
-section, main {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-  line-height: 1.6;
 }
