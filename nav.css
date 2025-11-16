@@ -1,3 +1,9 @@
+/* ===============================
+   NAV.CSS
+   Author: Jamelly Ramirez
+   Date: November 2025
+   Description: Complete navigation for project.html and other pages
+================================= */
 /* ===== Navigation Bar Styling ===== */
 .site-header {
   display: flex;
@@ -107,6 +113,7 @@
     display: inline-block;
     margin-top: 10px;
   }
+
 
   .dropdown-content {
     display: none;
