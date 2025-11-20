@@ -411,3 +411,85 @@ main {
 html {
   scroll-behavior: smooth;
 }
+
+
+/* ===============================
+   TABLE
+================================= */
+.course-table {
+  margin: 20px auto;
+  max-width: 700px;
+}
+
+/* Visible caption */
+.course-table figcaption {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+/* Screenreaderonly caption */
+.sr-only {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
+
+/* Table styling */
+.course-table table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid #1F4E79;
+  display: block;
+  overflow-x: auto;
+}
+
+/* Cells */
+.course-table th,
+.course-table td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+/* Header row */
+.course-table thead {
+  background-color: #1F4E79;
+  color: white;
+}
+
+/* 1st and 3rd DATA rows same color */
+.course-table tbody tr:nth-child(1),
+.course-table tbody tr:nth-child(3) {
+  background-color: #D8E8F6;
+}
+
+/* Alternating row colors */
+.course-table tbody tr:nth-child(2n) {
+  background-color: #F3F7FB;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .course-table table {
+    font-size: 0.9rem;
+  }
+  .course-table th,
+  .course-table td {
+    padding: 8px;
+  }
+}
+
+/* ===============================
+CENTER EXPERIENCE PAGE CONTENT
+================================= */
+.experience {
+max-width: 800px;
+margin-left: auto;
+margin-right: auto;
+padding: 20px;
+text-align: left;
+line-height: 1.6;
+display: block;
+}
