@@ -441,7 +441,6 @@ html {
   width: 100%;
   border-collapse: collapse;
   border: 2px solid #1F4E79;
-  display: block;
   overflow-x: auto;
 }
 
