@@ -568,3 +568,61 @@ display: block;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);  /* glowing effect */
   cursor: pointer;
 }
+/* ===============================
+   FONTS
+================================= */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Montserrat:wght@600;700&display=swap');
+
+/* Body font */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #E6F2FA;
+  color: #1F4E79;
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings use Montserrat */
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: #1F4E79;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.25);
+}
+
+/* Optional: Improve paragraph readability */
+p {
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Optional: Style links to match your theme */
+a {
+  color: #1F4E79;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Optional: Buttons (if you have any) */
+button {
+  font-family: 'Poppins', sans-serif;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  background-color: #1F4E79;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
