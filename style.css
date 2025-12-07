@@ -578,34 +578,29 @@ h1, h2 {
   letter-spacing: 1.5px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.25);
 }
-/* ===========================
-   CORNER IMAGE FIX
-   =========================== */
 
-.corner-image {
-  position: absolute;      /* stays in the corner */
-  top: 20px;
-  right: 20px;
-  width: 180px;            /* adjust as needed */
-  max-width: 20%;          /* prevents taking too much space */
-  z-index: -1;             /* pushes it BEHIND your text */
-  opacity: 0.15;           /* fades so text remains readable */
-  pointer-events: none;    /* image cannot block clicks */
-}
-
-/* Prevent overlap on small screens */
-@media (max-width: 800px) {
-  .corner-image {
-    width: 120px;
-    top: 10px;
-    right: 10px;
-    opacity: 0.12;
-  }
-}
 
 @media (max-width: 500px) {
   .corner-image {
     width: 90px;
     opacity: 0.1;
   }
+}
+/* ===========================
+   GLOBAL PAGE CONTENT WRAPPER
+   =========================== */
+
+.page-content {
+  max-width: 900px;     /* keeps text centered */
+  margin: 0 auto;       /* centers the content */
+  padding: 20px;        /* spacing from the edges */
+  width: 90%;           /* prevents edge-to-edge stretching */
+}
+/* HERO IMAGE BELOW TEXT */
+.hero-image {
+  display: block;
+  margin: 30px auto 0 auto;   /* space above, centered */
+  max-width: 100%;            /* responsive */
+  height: auto;               /* maintains proportions */
+  border-radius: 10px;        /* optional clean look */
 }
