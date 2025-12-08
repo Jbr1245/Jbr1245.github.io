@@ -1,29 +1,75 @@
 /* ===============================
-   NAV.CSS
+   NAVIGATION STYLING
    Author: Jamelly Ramirez
    Date: December 2025
-   Description: Navigation styling for all pages
 ================================= */
 
-/* ===== Navigation Bar Styling ===== */
-.site-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #1F4E79;
-  padding: 15px 20px;
-  border-bottom: 2px solid #ccc;
-}
-
-.site-logo {
-  height: 60px;
-  width: auto;
-  margin-bottom: 10px;
-}
-
-.main-nav {
-  position: relative;
+/* Main navigation */
+nav.main-nav {
   text-align: center;
+  background-color: #1F4E79;
+}
+
+nav.main-nav ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  gap: 20px;
+}
+
+nav.main-nav ul li a {
+  display: block;
+  padding: 12px 20px;
+  color: white; /* default link color */
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav.main-nav ul li a:hover {
+  color: #F2B705;
+}
+
+nav.main-nav ul li a.active {
+  color: #F2B705; /* active page */
+  text-decoration: underline;
+}
+
+/* Dropdown submenu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  background-color: #1F4E79;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0;
+  min-width: 150px;
+  z-index: 1000;
+}
+
+.dropdown:hover .submenu {
+  display: flex;
+}
+
+.submenu li a {
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  color: white;
+}
+
+.submenu li a:hover {
+  color: #F2B705;
 }
 
 /* Hamburger menu toggle */
@@ -42,7 +88,7 @@
   border-radius: 6px;
   cursor: pointer;
   user-select: none;
-  transition: 0.3s;
+  transition: background-color 0.3s ease, color 0.3s ease;
   display: none; /* hidden on desktop */
 }
 
@@ -51,112 +97,31 @@
   color: #F2B705;
 }
 
-/* ===== Main Navigation Links ===== */
-.nav-links {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  list-style: none;
-  margin: 10px 0 0 0;
-  padding: 0;
-  flex-direction: row;
-}
+/* ===============================
+   RESPONSIVE MOBILE NAVIGATION
+================================= */
+@media (max-width: 768px) {
+  .menu-button { display: inline-block; margin-top: 10px; }
 
-/* Default nav links: white */
-.nav-links li a {
-  display: block;
-  padding: 12px 20px;
-  color: white;
-  text-decoration: none;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.nav-links li a:hover {
-  background-color: #2B6CA3;
-  color: #F2B705;
-}
-
-/* Active page: yellow */
-.nav-links li a.active {
-  color: #F2B705;
-  text-decoration: underline;
-}
-
-/* ===== Dropdown for Projects ===== */
-.dropdown {
-  position: relative;
-}
-
-.submenu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  flex-direction: column;
-  background-color: #1F4E79;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 0;
-  min-width: 150px;
-  z-index: 1000;
-}
-
-.submenu li a {
-  padding: 10px 14px;
-  font-size: 0.95rem;
-  color: white;
-}
-
-.submenu li a:hover {
-  background-color: #2B6CA3;
-  color: #F2B705;
-}
-
-/* Show submenu on hover (desktop) */
-.dropdown:hover .submenu {
-  display: flex;
-}
-
-/* ===== Mobile Styling ===== */
-@media (max-width: 800px) {
-  .menu-button {
-    display: inline-block;
-    margin-top: 10px;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #1F4E79;
-    width: 200px;
-    border-radius: 6px;
-    padding: 10px;
-    margin-top: 10px;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.4s ease;
-  }
-
-  /* Show menu when toggled */
-  #menu-toggle:checked + .menu-button + .nav-links {
+  #menu-toggle:checked + .menu-button + nav.main-nav ul {
     display: flex;
+    flex-direction: column;
+    opacity: 1;
     max-height: 600px;
   }
 
-  /* Mobile submenu stacked under Projects */
-  .submenu {
-    position: static;
-    border: none;
-    background: none;
-    padding-left: 20px;
-    display: flex !important;
+  nav.main-nav ul {
+    display: none;
     flex-direction: column;
+    width: 200px;
+    margin-top: 10px;
+    border-radius: 6px;
+    padding: 10px;
   }
 
-  /* Remove hover effect on mobile */
-  .dropdown:hover .submenu {
-    display: flex; 
+  .dropdown .submenu {
+    display: flex !important;
+    flex-direction: column;
+    padding-left: 20px;
   }
 }
