@@ -152,54 +152,42 @@
     display: flex !important;
   }
 }
-/* ================================
-   PROJECTS SUBMENU (HOVER DESKTOP)
-   ================================ */
+/* --- DROPDOWN BASE SETUP --- */
 
-/* Hide submenu by default */
-.submenu {
-  display: none;
-  position: absolute;
-  background-color: white;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  border: 1px solid #ccc;
-  z-index: 10;
+.dropdown {
+  position: relative;
 }
 
-/* Reveal submenu when hovering the Projects tab */
+.submenu {
+  display: none;            /* Hide by default */
+  position: absolute;
+  background-color: white;  /* Match your main nav background */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  min-width: 150px;         /* so text fits */
+  border: 1px solid #ccc;   /* optional: matches your nav aesthetic */
+  z-index: 1000;
+}
+
+.submenu li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+}
+
+/* --- SHOW SUBMENU ON HOVER (DESKTOP) --- */
 .dropdown:hover .submenu {
   display: block;
 }
 
-/* Submenu link styling */
-.submenu li a {
-  display: block;
-  padding: 10px 15px;
-  color: black;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.submenu li a:hover {
-  background-color: #f0f0f0;
-}
-
-/* ================================
-   MOBILE  (MENU TOGGLE)
-   Makes submenu show inside dropdown
-   ================================ */
+/* --- ENSURE SUBMENU HIDES ON MOBILE WHEN MENU IS COLLAPSED --- */
 @media (max-width: 768px) {
-
   .submenu {
-    position: static;     /* no popout menu on mobile */
+    position: static;   /* stack under main item */
     border: none;
-    display: block;       /* always visible when menu is open */
-    background: transparent;
   }
-
-  .submenu li a {
-    padding-left: 30px;   /* indentation under Projects item */
+  .dropdown:hover .submenu {
+    display: block;  /* still works inside mobile menu */
   }
 }
