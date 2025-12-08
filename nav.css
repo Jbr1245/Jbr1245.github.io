@@ -1,5 +1,5 @@
 /* ===============================
-   NAVIGATION
+   NAVIGATION 
 ================================= */
 header, .site-header {
   display: flex;
@@ -21,52 +21,45 @@ header .logo, .site-logo {
   text-align: center;
 }
 
-/* Hamburger menu toggle */
+/* Hamburger menu */
 #menu-toggle {
   display: none;
 }
-
 .menu-button {
   display: none; /* hidden on desktop */
   background-color: #1F4E79;
   color: white;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 500;
   padding: 8px 16px;
   border: 2px solid white;
   border-radius: 6px;
   cursor: pointer;
   user-select: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
 }
 
-.menu-button:hover {
-  background-color: #2B6CA3;
-  color: #F2B705;
-}
-
-/* Main nav list */
 nav.main-nav ul {
   display: flex;
   justify-content: center;
-  flex-direction: row;
-  list-style: none;
-  padding: 0;
-  margin: 10px 0 0 0;
   gap: 20px;
+  list-style: none;
+  margin: 10px 0 0 0;
+  padding: 0;
 }
 
-nav.main-nav ul li a {
+nav.main-nav ul li a,
+.dropdown-toggle {
   display: block;
   padding: 12px 20px;
   color: white;
+  text-decoration: none;
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
   transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
-nav.main-nav ul li a:hover {
+nav.main-nav ul li a:hover,
+.dropdown-toggle:hover {
   background-color: #2B6CA3;
   color: #F2B705;
 }
@@ -82,9 +75,9 @@ nav.main-nav ul li.dropdown {
 }
 
 /* Submenu: hidden by default */
-nav.main-nav ul li.dropdown .submenu {
+.submenu {
   display: none;
-  position: absolute;
+  position: absolute; /* desktop hover dropdown */
   top: 100%;
   left: 0;
   flex-direction: column;
@@ -95,19 +88,18 @@ nav.main-nav ul li.dropdown .submenu {
   z-index: 1000;
 }
 
-/* Submenu only shows on hover (desktop/tablet) */
-nav.main-nav ul li.dropdown:hover .submenu {
+/* Desktop hover */
+.dropdown:hover .submenu {
   display: flex;
 }
 
-/* Submenu links: red */
-nav.main-nav ul li.dropdown .submenu li a {
-  color: red;
+.submenu li a {
+  color: red; /* red submenu links */
   padding: 10px 14px;
   font-size: 0.95rem;
 }
 
-nav.main-nav ul li.dropdown .submenu li a:hover {
+.submenu li a:hover {
   background-color: #2B6CA3;
   color: #F2B705;
 }
@@ -121,29 +113,35 @@ nav.main-nav ul li.dropdown .submenu li a:hover {
     margin-top: 10px;
   }
 
+  /* Hide main menu by default */
   nav.main-nav ul {
-    display: none; /* hide menu by default */
+    display: none;
     flex-direction: column;
     width: 100%;
-    margin-top: 10px;
+    background-color: #1F4E79;
     padding: 10px;
     border-radius: 6px;
   }
 
-  /* Show menu when checkbox is checked */
+  /* Show main menu when hamburger clicked */
   #menu-toggle:checked + .menu-button + nav.main-nav ul {
     display: flex;
   }
 
-  /* Mobile submenu */
-  nav.main-nav ul li.dropdown .submenu {
+  /* Submenu: stacked for mobile */
+  .submenu {
     position: static;
     display: none;
     padding-left: 20px;
   }
 
-  /* Show submenu when parent is clicked (mobile) */
-  #menu-toggle:checked + .menu-button + nav.main-nav ul li.dropdown .submenu {
+  /* Show submenu when its toggle checked */
+  #projects-toggle:checked + .submenu {
     display: flex;
+  }
+
+  .dropdown-toggle {
+    display: flex;
+    justify-content: space-between;
   }
 }
