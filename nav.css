@@ -2,9 +2,10 @@
    NAV.CSS
    Author: Jamelly Ramirez
    Date: December 2025
-   Description: Fixed navigation for project.html and other pages
+   Description: Navigation bar styling with dropdown menu
 ================================= */
-/* ===== Navigation Bar Styling ===== */
+
+/* General nav container */
 .site-header {
   display: flex;
   flex-direction: column;
@@ -20,16 +21,20 @@
   margin-bottom: 10px;
 }
 
+/* Main navigation */
 .main-nav {
   position: relative;
+  width: 100%;
   text-align: center;
 }
 
+/* Hamburger menu toggle (mobile) */
 #menu-toggle {
   display: none;
 }
 
 .menu-button {
+  display: none; /* hidden on desktop */
   background-color: #1F4E79;
   color: white;
   font-family: 'Poppins', sans-serif;
@@ -41,7 +46,6 @@
   cursor: pointer;
   user-select: none;
   transition: 0.3s;
-  display: none;
 }
 
 .menu-button:hover {
@@ -49,45 +53,44 @@
   color: #F2B705;
 }
 
-.dropdown-content {
+/* Nav links */
+nav ul.nav-links {
   display: flex;
   justify-content: center;
-  flex-direction: row;
-  background-color: #1F4E79;
+  gap: 20px;
   list-style: none;
   padding: 0;
   margin: 10px 0 0 0;
-  gap: 20px;
 }
 
-.dropdown-content li a {
+nav ul.nav-links li a {
   display: block;
   padding: 12px 20px;
   color: white;
-  text-decoration: none;
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
   transition: 0.3s;
 }
 
-.dropdown-content li a:hover {
+nav ul.nav-links li a:hover {
   background-color: #2B6CA3;
   color: #F2B705;
 }
 
-.dropdown-content li a.active {
+nav ul.nav-links li a.active {
   color: #F2B705;
   text-decoration: underline;
 }
 
-/* ===== DROPDOWN FIX ===== */
+/* ===============================
+   DROPDOWN MENU
+================================= */
 .dropdown {
   position: relative;
 }
 
-/* Hide submenu by default */
-.submenu {
-  display: none;
+.dropdown .submenu {
+  display: none;             /* hidden by default */
   position: absolute;
   top: 100%;
   left: 0;
@@ -95,64 +98,55 @@
   background-color: #1F4E79;
   border: 1px solid #ccc;
   border-radius: 6px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
   min-width: 150px;
   z-index: 1000;
+}
+
+.dropdown:hover .submenu {
+  display: flex;             /* only show on hover (desktop) */
 }
 
 .submenu li a {
   padding: 10px 14px;
   font-size: 0.95rem;
+  color: white;
 }
 
-/* Show submenu only on hover (desktop) */
-@media (min-width: 801px) {
-  .dropdown:hover .submenu {
-    display: flex;
-  }
-}
-
-/* ===== MOBILE STYLING ===== */
+/* ===============================
+   MOBILE NAVIGATION
+================================= */
 @media (max-width: 800px) {
+
   .menu-button {
     display: inline-block;
     margin-top: 10px;
   }
 
-  .dropdown-content {
-    display: none;
+  nav ul.nav-links {
     flex-direction: column;
-    background-color: #1F4E79;
+    display: none;  /* hidden initially */
     width: 200px;
-    border: 1px solid #ccc;
+    margin: 10px auto;
     border-radius: 6px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    margin-top: 10px;
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.4s ease;
+    padding: 10px;
+    background-color: #1F4E79;
   }
 
-  /* Show main menu when hamburger toggled */
-  #menu-toggle:checked + .menu-button + .dropdown-content {
+  #menu-toggle:checked + .menu-button + ul.nav-links {
     display: flex;
-    opacity: 1;
-    max-height: 600px;
   }
 
-  /* Mobile submenu stacked under parent item */
-  .submenu {
+  .dropdown .submenu {
     position: static;
+    display: none;  /* hidden initially */
+    padding-left: 20px;
     border: none;
     background: none;
-    padding-left: 20px;
   }
 
-  /* Ensure submenu is hidden unless menu is open */
-  .dropdown:hover .submenu {
-    display: none;
+  /* show submenu when Projects item is focused (mobile tap) */
+  .dropdown:has(:focus-within) .submenu {
+    display: flex;
+    flex-direction: column;
   }
 }
