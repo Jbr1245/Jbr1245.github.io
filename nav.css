@@ -1,5 +1,5 @@
 /* ===============================
-   NAVIGATION (CSS Only)
+   NAVIGATION
 ================================= */
 header, .site-header {
   display: flex;
@@ -10,9 +10,8 @@ header, .site-header {
   border-bottom: 2px solid #ccc;
 }
 
-header .logo, .site-logo {
+.site-logo {
   height: 60px;
-  width: auto;
   margin-bottom: 10px;
 }
 
@@ -27,6 +26,7 @@ header .logo, .site-logo {
 }
 
 .menu-button {
+  display: none; /* desktop hidden */
   background-color: #1F4E79;
   color: white;
   font-family: 'Poppins', sans-serif;
@@ -36,9 +36,6 @@ header .logo, .site-logo {
   border: 2px solid white;
   border-radius: 6px;
   cursor: pointer;
-  user-select: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  display: none; /* hidden on desktop */
 }
 
 .menu-button:hover {
@@ -46,15 +43,13 @@ header .logo, .site-logo {
   color: #F2B705;
 }
 
-/* Main navigation list */
+/* Main nav list */
 nav.main-nav ul {
   display: flex;
   justify-content: center;
-  flex-direction: row;
-  background-color: #1F4E79;
   list-style: none;
-  padding: 0;
   margin: 10px 0 0 0;
+  padding: 0;
   gap: 20px;
 }
 
@@ -72,17 +67,12 @@ nav.main-nav ul li a:hover {
   color: #F2B705;
 }
 
-nav.main-nav ul li a.active {
-  color: #F2B705;
-  text-decoration: underline;
-}
-
-/* Dropdown container */
+/* Dropdown */
 nav.main-nav ul li.dropdown {
   position: relative;
 }
 
-/* Submenu: hidden by default */
+/* Submenu hidden by default */
 nav.main-nav ul li.dropdown .submenu {
   display: none;
   position: absolute;
@@ -96,12 +86,12 @@ nav.main-nav ul li.dropdown .submenu {
   z-index: 1000;
 }
 
-/* Submenu only shows on hover */
-nav.main-nav ul li.dropdown:hover .submenu {
+/* Show submenu on hover (desktop & tablet) */
+nav.main-nav ul li.dropdown:hover > .submenu {
   display: flex;
 }
 
-/* Submenu links: red */
+/* Submenu links red */
 nav.main-nav ul li.dropdown .submenu li a {
   color: red;
   padding: 10px 14px;
@@ -120,11 +110,10 @@ nav.main-nav ul li.dropdown .submenu li a:hover {
   .menu-button {
     display: inline-block;
     margin-top: 10px;
-    cursor: pointer;
   }
 
   nav.main-nav ul {
-    display: none; /* hide menu by default on mobile */
+    display: none; /* hidden by default */
     flex-direction: column;
     width: 100%;
     margin-top: 10px;
@@ -144,13 +133,8 @@ nav.main-nav ul li.dropdown .submenu li a:hover {
     padding-left: 20px;
   }
 
-  /* Show submenu on hover (desktop/tablet only) */
-  nav.main-nav ul li.dropdown:hover .submenu {
-    display: flex;
-  }
-
-  /* Mobile submenu toggle using checkbox hack */
-  #menu-toggle:checked + .menu-button + nav.main-nav ul li.dropdown .submenu {
+  /* Show submenu only when parent dropdown is hovered (tablet only) */
+  nav.main-nav ul li.dropdown:hover > .submenu {
     display: flex;
   }
 }
