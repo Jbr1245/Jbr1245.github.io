@@ -1,15 +1,15 @@
 /* ===============================
    STYLE.CSS
    Author: Jamelly Ramirez
-   Date: November 2025
+   Date: December 2025
    Description: Complete styling for project.html and other pages
 ================================= */
 
 /* ===============================
-   GENERAL PAGE STYLING
+   GENERAL STYLING
 ================================= */
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #E6F2FA;
   color: #1F4E79;
   margin: 0;
@@ -26,10 +26,16 @@ a:hover {
   text-decoration: underline;
 }
 
+h1, h2 {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1.5px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.25);
+}
+
 /* ===============================
    HEADER & NAVIGATION
 ================================= */
-header, .site-header {
+.site-header {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,24 +44,20 @@ header, .site-header {
   border-bottom: 2px solid #ccc;
 }
 
-header .logo, .site-logo {
+.site-logo {
   height: 60px;
   width: auto;
   margin-bottom: 10px;
 }
 
-/* Main navigation */
 .main-nav {
   position: relative;
+  width: 100%;
   text-align: center;
 }
 
-/* Hamburger menu toggle */
-#menu-toggle {
-  display: none;
-}
-
 .menu-button {
+  display: none;
   background-color: #1F4E79;
   color: white;
   font-family: 'Poppins', sans-serif;
@@ -66,8 +68,7 @@ header .logo, .site-logo {
   border-radius: 6px;
   cursor: pointer;
   user-select: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  display: none; /* hidden on desktop */
+  transition: 0.3s;
 }
 
 .menu-button:hover {
@@ -75,44 +76,43 @@ header .logo, .site-logo {
   color: #F2B705;
 }
 
-/* Navigation list */
-nav.main-nav ul, .dropdown-content {
+nav ul.nav-links {
   display: flex;
   justify-content: center;
-  flex-direction: row;
-  background-color: #1F4E79;
+  gap: 20px;
   list-style: none;
   padding: 0;
   margin: 10px 0 0 0;
-  gap: 20px;
 }
 
-.dropdown-content li a {
+nav ul.nav-links li a {
   display: block;
   padding: 12px 20px;
   color: white;
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
-  transition: background-color 0.3s ease;
+  transition: 0.3s;
 }
 
-.dropdown-content li a:hover {
+nav ul.nav-links li a:hover {
   background-color: #2B6CA3;
   color: #F2B705;
 }
 
-.dropdown-content li a.active {
+nav ul.nav-links li a.active {
   color: #F2B705;
   text-decoration: underline;
 }
 
-/* Dropdown submenu */
+/* ===============================
+   DROPDOWN MENU
+================================= */
 .dropdown {
   position: relative;
 }
 
-.submenu {
-  display: none;
+.dropdown .submenu {
+  display: none;             /* hidden by default */
   position: absolute;
   top: 100%;
   left: 0;
@@ -120,92 +120,22 @@ nav.main-nav ul, .dropdown-content {
   background-color: #1F4E79;
   border: 1px solid #ccc;
   border-radius: 6px;
-  padding: 0;
   min-width: 150px;
   z-index: 1000;
 }
 
 .dropdown:hover .submenu {
-  display: flex;
+  display: flex;             /* only appear on hover (desktop) */
 }
 
 .submenu li a {
   padding: 10px 14px;
   font-size: 0.95rem;
+  color: white;
 }
 
 /* ===============================
-   HERO SECTION
-================================= */
-.hero {
-  position: relative;
-  padding: 60px 20px;
-  min-height: 60vh;
-  text-align: center;
-  color: white;
-  background-color: #1F4E79;
-  overflow: hidden;
-}
-
-.hero-logo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 80px;
-  opacity: 0.9;
-  z-index: 10;
-}
-
-.hero-image {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 120px;
-  max-width: 20%;
-  height: auto;
-  border-radius: 10px;
-  z-index: 1;
-  opacity: 0.9;
-}
-
-.hero h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2.4rem;
-  color: #F2B705;
-  margin-bottom: 20px;
-}
-
-.hero .highlight {
-  color: #D1495B;
-}
-
-.hero .hero-content p {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.1rem;
-  max-width: 800px;
-  margin: 10px auto;
-  line-height: 1.5;
-  color: #FFFFFF;
-}
-
-.cta-button {
-  display: inline-block;
-  background-color: #1F4E79;
-  color: white;
-  padding: 12px 28px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  margin-top: 20px;
-  transition: 0.3s;
-}
-
-.cta-button:hover {
-  background-color: #D1495B;
-}
-
-/* ===============================
-   PROJECTS PAGE
+   PROJECTS GRID
 ================================= */
 .projects {
   padding: 40px;
@@ -235,7 +165,6 @@ nav.main-nav ul, .dropdown-content {
 
 .project p {
   line-height: 1.6;
-  font-family: "Open Sans", sans-serif;
 }
 
 .artifact, .reflection {
@@ -247,9 +176,7 @@ nav.main-nav ul, .dropdown-content {
   border-radius: 8px;
 }
 
-/* ===============================
-   PHOTO GALLERY
-================================= */
+/* PHOTO GALLERY */
 .photo-gallery {
   display: flex;
   justify-content: center;
@@ -267,9 +194,7 @@ nav.main-nav ul, .dropdown-content {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* ===============================
-   FOOTER
-================================= */
+/* FOOTER */
 footer {
   text-align: center;
   background-color: #1F4E79;
@@ -286,321 +211,64 @@ footer {
   color: white;
 }
 
-.footer-icon { width: 20px; height: 20px; margin-right: 6px; }
-
-.footer-contact a { color: white; text-decoration: none; }
-.footer-contact a:hover { text-decoration: underline; }
-
-.divider { margin: 0 10px; font-weight: bold; color: white; }
-.footer-credit { margin-top: 8px; font-size: 14px; opacity: 0.9; }
-
-/* ===============================
-   ABOUT PAGE GRID LAYOUT
-================================= */
-main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "about education"
-    "media education"
-    "gallery gallery"
-    "resume resume";
-  gap: 40px;
-  padding: 40px;
-}
-
-.about-section { grid-area: about; }
-.education-section { grid-area: education; }
-.about-media { grid-area: media; }
-.photo-gallery { grid-area: gallery; }
-.pdf-link { grid-area: resume; }
-
-/* Tablet Layout */
-@media (min-width: 601px) and (max-width: 1024px) {
-  main {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "about"
-      "education"
-      "media"
-      "gallery"
-      "resume";
-    padding: 30px;
-  }
-  .about-media {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-  .photo-gallery {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-  }
-}
-
-/* Mobile Layout */
-@media (max-width: 600px) {
-  main {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "about"
-      "education"
-      "media"
-      "gallery"
-      "resume";
-    padding: 20px;
-  }
-  .about-media {
-    grid-template-columns: 1fr;
-  }
-  .photo-gallery {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ===============================
-   RESPONSIVE MOBILE NAVIGATION
-================================= */
-@media (max-width: 768px) {
-  .menu-button { display: inline-block; margin-top: 10px; }
-
-  #menu-toggle:checked + .menu-button + .dropdown-content {
-    display: flex;
-    flex-direction: column;
-    opacity: 1;
-    max-height: 600px;
-  }
-
-  .dropdown-content {
-    display: none;
-    flex-direction: column;
-    width: 200px;
-    margin-top: 10px;
-    border-radius: 6px;
-    padding: 10px;
-  }
-
-  .dropdown .submenu {
-    display: flex !important;
-    flex-direction: column;
-    padding-left: 20px;
-  }
-
-  h1 { font-size: 1.8rem; }
-  .projects { grid-template-columns: 1fr; gap: 20px; padding: 20px; }
-  .photo-gallery { flex-direction: column; align-items: center; }
-  .hero h1 { font-size: 2rem; }
-  .hero .hero-content p { font-size: 1rem; }
-}
-
-/* ===============================
-   PRINT STYLES
-================================= */
-@media print {
-  body { background: white; color: black; font-family: "Times New Roman", serif; font-size: 11pt; line-height: 1.3; margin: 0; padding: 0; }
-  header, nav, img, video, .photo-gallery, .cta-button, .site-logo { display: none !important; }
-  footer { font-size: 10pt; margin-top: 15px; text-align: left; border-top: 1px solid black; padding-top: 5px; }
-  h1, h2, h3 { font-size: 14pt; margin: 0 0 6px 0; }
-  p, li { font-size: 11pt; margin: 0 0 5px 0; }
-}
-
-/* ===============================
-   ANCHOR LINKS SCROLL
-================================= */
-html {
-  scroll-behavior: smooth;
-}
-
-
-/* ===============================
-   TABLE
-================================= */
-.course-table {
-  margin: 20px auto;
-  max-width: 700px;
-}
-
-/* Visible caption */
-.course-table figcaption {
-  font-weight: bold;
-  text-align: center;
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-}
-
-/* Screenreaderonly caption */
-.sr-only {
-  position: absolute;
-  left: -9999px;
-  top: -9999px;
-}
-
-/* Table styling */
-.course-table table {
-  width: 100%;
-  border-collapse: collapse;
-  border: 2px solid #1F4E79;
-  overflow-x: auto;
-}
-
-/* Cells */
-.course-table th,
-.course-table td {
-  padding: 12px;
-  border: 1px solid #ccc;
-  text-align: left;
-}
-
-/* Header row */
-.course-table thead {
-  background-color: #1F4E79;
-  color: white;
-}
-
-/* 1st and 3rd DATA rows same color */
-.course-table tbody tr:nth-child(1),
-.course-table tbody tr:nth-child(3) {
-  background-color: #D8E8F6;
-}
-
-/* Alternating row colors */
-.course-table tbody tr:nth-child(2n) {
-  background-color: #F3F7FB;
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  .course-table table {
-    font-size: 0.9rem;
-  }
-  .course-table th,
-  .course-table td {
-    padding: 8px;
-  }
-}
-
-/* ===============================
-CENTER EXPERIENCE PAGE CONTENT
-================================= */
-.experience {
-max-width: 800px;
-margin-left: auto;
-margin-right: auto;
-padding: 20px;
-text-align: left;
-line-height: 1.6;
-display: block;
-}
-/* Fix oversized images + videos on About page */
-.about-media {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.about-media img,
-.about-media video {
-  width: 100%;
-  max-width: 450px; /* keeps images under control */
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-.about-media figure {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-/* Contact form alignment */
-.contact-form {
-  max-width: 500px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.contact-form label {
-  font-weight: bold;
-}
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  width: 100%;
-  padding: 10px;
-  border: 2px solid #1F4E79;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-family: 'Open Sans', sans-serif;
-  box-sizing: border-box;
-}
-
-.contact-form button {
-  background-color: #1F4E79;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1.1rem;
-  transition: 0.3s;
-}
-
-.contact-form button:hover {
-  background-color: #D1495B;
-}
-/* Footer Icon Animation */
 .footer-icon {
   width: 24px;
   height: 24px;
-  vertical-align: middle;
   transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover Effect (Animation) */
 .footer-icon:hover {
-  transform: scale(1.25);            /* icon grows slightly */
-  filter: brightness(1.3);           /* soft glow/brightness boost */
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);  /* glowing effect */
+  transform: scale(1.25);
+  filter: brightness(1.3);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
   cursor: pointer;
 }
-body {
-  font-family: 'Poppins', sans-serif;
+
+.footer-contact a {
+  color: white;
 }
 
-/* Custom styles for all <h1> and <h2> elements */
-h1, h2 {
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing: 1.5px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.25);
+.footer-contact a:hover {
+  text-decoration: underline;
 }
 
+/* ===============================
+   RESPONSIVE STYLING
+================================= */
+@media (max-width: 800px) {
 
-@media (max-width: 500px) {
-  .corner-image {
-    width: 90px;
-    opacity: 0.1;
+  .menu-button {
+    display: inline-block;
+    margin-top: 10px;
   }
-}
-/* ===========================
-   GLOBAL PAGE CONTENT WRAPPER
-   =========================== */
 
-.page-content {
-  max-width: 900px;     /* keeps text centered */
-  margin: 0 auto;       /* centers the content */
-  padding: 20px;        /* spacing from the edges */
-  width: 90%;           /* prevents edge-to-edge stretching */
-}
-/* HERO IMAGE BELOW TEXT */
-.hero-image {
-  display: block;
-  margin: 30px auto 0 auto;   /* space above, centered */
-  max-width: 100%;            /* responsive */
-  height: auto;               /* maintains proportions */
-  border-radius: 10px;        /* optional clean look */
+  nav ul.nav-links {
+    flex-direction: column;
+    display: none;  /* hidden initially for hamburger menu */
+    width: 200px;
+    margin: 10px auto;
+    border-radius: 6px;
+    padding: 10px;
+    background-color: #1F4E79;
+  }
+
+  #menu-toggle:checked + .menu-button + ul.nav-links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dropdown .submenu {
+    position: static;
+    display: none;   /* hidden initially */
+    padding-left: 20px;
+    border: none;
+    background: none;
+  }
+
+  /* show submenu when top menu item is clicked (mobile) */
+  .dropdown:has(:focus-within) .submenu {
+    display: flex;
+    flex-direction: column;
+  }
+
 }
