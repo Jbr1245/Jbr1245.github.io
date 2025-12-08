@@ -2,7 +2,7 @@
    NAVIGATION STYLING
 ================================= */
 
-/* Header & nav container */
+/* Main header */
 .site-header {
   display: flex;
   flex-direction: column;
@@ -19,13 +19,13 @@
   margin-bottom: 10px;
 }
 
-/* Main navigation */
+/* Main nav */
 .main-nav {
-  position: relative;
   text-align: center;
+  position: relative;
 }
 
-/* Hamburger toggle */
+/* Hamburger menu */
 #menu-toggle {
   display: none;
 }
@@ -41,7 +41,6 @@
   border-radius: 6px;
   cursor: pointer;
   user-select: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
   display: none;
 }
 
@@ -51,103 +50,104 @@
 }
 
 /* Navigation links */
-nav.main-nav ul, .dropdown-content {
+nav.main-nav ul {
   display: flex;
   justify-content: center;
-  flex-direction: row;
-  background-color: #1F4E79;
   list-style: none;
-  padding: 0;
-  margin: 10px 0 0 0;
   gap: 20px;
+  margin: 10px 0 0 0;
+  padding: 0;
 }
 
-.dropdown-content li a {
-  display: block;
-  padding: 12px 20px;
+nav.main-nav ul li a {
   color: white;
+  text-decoration: none;
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
-  transition: background-color 0.3s ease;
+  padding: 12px 20px;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-.dropdown-content li a:hover {
-  background-color: #2B6CA3;
+nav.main-nav ul li a:hover {
   color: #F2B705;
 }
 
-/* Active page */
-.dropdown-content li a.active {
+nav.main-nav ul li a.active {
   color: #F2B705;
   text-decoration: underline;
 }
 
-/* Dropdown submenu */
+/* Dropdown container */
 .dropdown {
   position: relative;
 }
 
+/* Submenu (Projects 1-3) */
 .submenu {
   display: none; /* hide by default */
   position: absolute;
   top: 100%;
   left: 0;
-  flex-direction: column;
   background-color: #1F4E79;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  flex-direction: column;
   padding: 0;
+  border-radius: 6px;
   min-width: 150px;
   z-index: 1000;
 }
 
-.submenu li a {
-  padding: 10px 14px;
-  font-size: 0.95rem;
-  color: red; /* Submenu links red */
-  background-color: transparent;
-}
-
-/* Show submenu only on hover for desktop */
+/* Show submenu only on hover */
 .dropdown:hover .submenu {
   display: flex;
 }
 
+/* Submenu links */
+.submenu li a {
+  color: red; /* Only submenu links are red */
+  padding: 10px 14px;
+}
+
+.submenu li a:hover {
+  background-color: #2B6CA3;
+  color: #F2B705;
+}
+
 /* ===============================
-   MOBILE / TABLET STYLING
+   MOBILE / TABLET NAV
 ================================= */
 @media (max-width: 768px) {
-  .menu-button { display: inline-block; margin-top: 10px; }
-
-  .dropdown-content {
-    display: none;
-    flex-direction: column;
-    width: 200px;
+  .menu-button {
+    display: inline-block;
     margin-top: 10px;
-    border-radius: 6px;
-    padding: 10px;
   }
 
-  #menu-toggle:checked + .menu-button + .dropdown-content {
-    display: flex;
-    opacity: 1;
-    max-height: 600px;
-  }
-
-  /* Mobile submenu inside Projects */
-  .dropdown .submenu {
+  nav.main-nav ul {
     display: none;
     flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 6px;
+  }
+
+  #menu-toggle:checked + .menu-button + nav.main-nav ul {
+    display: flex;
+  }
+
+  /* Mobile dropdown submenu */
+  .dropdown .submenu {
+    position: static;
+    display: none;
     padding-left: 20px;
   }
 
-  /* Toggle submenu when Projects is clicked */
-  .dropdown:has(input:checked) .submenu,
-  .dropdown:has(a:focus) .submenu {
+  /* Show submenu when Projects is tapped/clicked */
+  .dropdown:has(:checked) .submenu {
     display: flex;
+    flex-direction: column;
   }
 
-  .submenu li a {
-    color: red; /* Keep submenu links red */
+  nav.main-nav ul li a {
+    color: white; /* keep main links white */
   }
 }
