@@ -1,11 +1,8 @@
 /* ===============================
-   NAV.CSS
-   Author: Jamelly Ramirez
-   Date: December 2025
-   Description: Navigation for all pages with hover dropdowns and mobile menu
+   NAVIGATION STYLING
 ================================= */
 
-/* ===== Navigation Bar Styling ===== */
+/* Header & nav container */
 .site-header {
   display: flex;
   flex-direction: column;
@@ -15,19 +12,20 @@
   border-bottom: 2px solid #ccc;
 }
 
+/* Logo */
 .site-logo {
   height: 60px;
   width: auto;
   margin-bottom: 10px;
 }
 
+/* Main navigation */
 .main-nav {
   position: relative;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
 }
 
-/* Hamburger menu toggle */
+/* Hamburger toggle */
 #menu-toggle {
   display: none;
 }
@@ -35,6 +33,7 @@
 .menu-button {
   background-color: #1F4E79;
   color: white;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.2rem;
   font-weight: 500;
   padding: 8px 16px;
@@ -42,8 +41,8 @@
   border-radius: 6px;
   cursor: pointer;
   user-select: none;
-  transition: background-color 0.3s, color 0.3s;
-  display: none; /* hidden on desktop */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: none;
 }
 
 .menu-button:hover {
@@ -51,40 +50,39 @@
   color: #F2B705;
 }
 
-/* Main navigation links */
+/* Navigation links */
 nav.main-nav ul, .dropdown-content {
   display: flex;
   justify-content: center;
   flex-direction: row;
+  background-color: #1F4E79;
   list-style: none;
   padding: 0;
   margin: 10px 0 0 0;
   gap: 20px;
 }
 
-nav.main-nav ul li a,
 .dropdown-content li a {
   display: block;
   padding: 12px 20px;
-  color: white; /* default link color */
+  color: white;
+  font-family: 'Poppins', sans-serif;
   font-size: 1rem;
-  text-decoration: none;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
-nav.main-nav ul li a:hover,
 .dropdown-content li a:hover {
   background-color: #2B6CA3;
-  color: #F2B705; /* yellow hover */
+  color: #F2B705;
 }
 
-nav.main-nav ul li a.active,
+/* Active page */
 .dropdown-content li a.active {
-  color: #F2B705; /* yellow for active page */
+  color: #F2B705;
   text-decoration: underline;
 }
 
-/* Dropdown menu */
+/* Dropdown submenu */
 .dropdown {
   position: relative;
 }
@@ -106,14 +104,18 @@ nav.main-nav ul li a.active,
 .submenu li a {
   padding: 10px 14px;
   font-size: 0.95rem;
-  color: white;
+  color: red; /* Submenu links red */
+  background-color: transparent;
 }
 
+/* Show submenu only on hover for desktop */
 .dropdown:hover .submenu {
-  display: flex; /* show on hover */
+  display: flex;
 }
 
-/* ===== MOBILE STYLING ===== */
+/* ===============================
+   MOBILE / TABLET STYLING
+================================= */
 @media (max-width: 768px) {
   .menu-button { display: inline-block; margin-top: 10px; }
 
@@ -132,19 +134,20 @@ nav.main-nav ul li a.active,
     max-height: 600px;
   }
 
-  /* Mobile submenu should show under Projects */
+  /* Mobile submenu inside Projects */
   .dropdown .submenu {
-    position: static;
-    border: none;
-    background: none;
-    padding-left: 20px;
     display: none;
+    flex-direction: column;
+    padding-left: 20px;
   }
 
-  /* Show submenu when menu is toggled */
-  .dropdown:has(a:active) .submenu,
+  /* Toggle submenu when Projects is clicked */
+  .dropdown:has(input:checked) .submenu,
   .dropdown:has(a:focus) .submenu {
     display: flex;
-    flex-direction: column;
+  }
+
+  .submenu li a {
+    color: red; /* Keep submenu links red */
   }
 }
