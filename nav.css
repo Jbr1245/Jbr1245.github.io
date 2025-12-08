@@ -152,3 +152,54 @@
     display: flex !important;
   }
 }
+/* ================================
+   PROJECTS SUBMENU (HOVER DESKTOP)
+   ================================ */
+
+/* Hide submenu by default */
+.submenu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  z-index: 10;
+}
+
+/* Reveal submenu when hovering the Projects tab */
+.dropdown:hover .submenu {
+  display: block;
+}
+
+/* Submenu link styling */
+.submenu li a {
+  display: block;
+  padding: 10px 15px;
+  color: black;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.submenu li a:hover {
+  background-color: #f0f0f0;
+}
+
+/* ================================
+   MOBILE  (MENU TOGGLE)
+   Makes submenu show inside dropdown
+   ================================ */
+@media (max-width: 768px) {
+
+  .submenu {
+    position: static;     /* no popout menu on mobile */
+    border: none;
+    display: block;       /* always visible when menu is open */
+    background: transparent;
+  }
+
+  .submenu li a {
+    padding-left: 30px;   /* indentation under Projects item */
+  }
+}
